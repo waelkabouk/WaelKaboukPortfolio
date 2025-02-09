@@ -1,20 +1,3 @@
-Below is one revised version of your code with adjustments to help improve responsiveness. In this revision:
-
-1. Image Container:
-Instead of a fixed height (e.g. h-[230px]), we use Tailwind’s aspect-video class so the image maintains a 16:9 ratio and scales with its container.
-
-
-2. Text Sizing:
-Responsive text classes (using Tailwind’s responsive prefixes) are added so headings, paragraphs, and tags adjust their sizes between mobile and larger screens.
-
-
-3. Layout Adjustments:
-The project cards container now includes a centering class (justify-center) so that on smaller screens the cards are centered, and the card itself uses a responsive width (sm:w-[360px] w-full).
-
-
-
-Below is the complete revised code:
-
 import React from 'react';
 import Tilt from 'react-tilt';
 import { motion } from 'framer-motion';
@@ -114,18 +97,3 @@ const Works = () => {
 };
 
 export default SectionWrapper(Works, '');
-
-Final Notes
-
-Tailwind CSS:
-This solution assumes you’re using Tailwind CSS. Adjust or replace the class names if you’re using a different styling approach.
-
-Image Aspect Ratio:
-If you prefer a fixed height over a responsive aspect ratio, you can revert the image container’s class to your original setting (or mix both approaches with responsive utilities).
-
-Further Testing:
-Always test on multiple devices and viewport sizes to ensure the layout meets your responsiveness requirements.
-
-
-This revised code should now be more adaptable across various screen sizes.
-
