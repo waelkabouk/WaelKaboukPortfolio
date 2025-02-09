@@ -1,3 +1,4 @@
+// Import asset images/icons from the assets folder
 import {
   mobile,
   backend,
@@ -19,7 +20,7 @@ import {
   starbucks,
   tesla,
   shopify,
-  // New project assets – please ensure these are added to your assets folder:
+  // New project assets – ensure these are present in your assets folder:
   restaurantOrders,
   mentalHealth,
   irrigation,
@@ -27,96 +28,46 @@ import {
   vehiclesDetector,
   moviesReview,
   tekram,
-  library, // Library Management System icon/image
-  multicam, // Multi-Camera Object Detection icon/image
+  library,      // Library Management System icon/image
+  multicam,     // Multi-Camera Object Detection icon/image
 } from '../assets';
 
+// Navigation links
 export const navLinks = [
-  {
-    id: 'about',
-    title: 'About',
-  },
-  {
-    id: 'work',
-    title: 'Work',
-  },
-  {
-    id: 'contact',
-    title: 'Contact',
-  },
+  { id: 'about', title: 'About' },
+  { id: 'work', title: 'Work' },
+  { id: 'contact', title: 'Contact' },
 ];
 
-const services = [
-  {
-    title: 'Web Developer',
-    icon: web,
-  },
-  {
-    title: 'Mobile Developer',
-    icon: mobile,
-  },
-  {
-    title: 'AI Developer',
-    icon: backend,
-  },
+// Services provided
+export const services = [
+  { title: 'Web Developer', icon: web },
+  { title: 'Mobile Developer', icon: mobile },
+  { title: 'AI Developer', icon: backend },
 ];
 
-const technologies = [
-  {
-    name: 'HTML 5',
-    icon: html,
-  },
-  {
-    name: 'CSS 3',
-    icon: css,
-  },
-  {
-    name: 'JavaScript',
-    icon: javascript,
-  },
-  {
-    name: 'TypeScript',
-    icon: typescript,
-  },
-  {
-    name: 'React JS',
-    icon: reactjs,
-  },
-  {
-    name: 'Redux Toolkit',
-    icon: redux,
-  },
-  {
-    name: 'Tailwind CSS',
-    icon: tailwind,
-  },
-  {
-    name: 'Node JS',
-    icon: nodejs,
-  },
-  {
-    name: 'MongoDB',
-    icon: mongodb,
-  },
-  {
-    name: 'git',
-    icon: git,
-  },
-  {
-    name: 'figma',
-    icon: figma,
-  },
-  {
-    name: 'docker',
-    icon: docker,
-  },
+// Technologies used
+export const technologies = [
+  { name: 'HTML 5', icon: html },
+  { name: 'CSS 3', icon: css },
+  { name: 'JavaScript', icon: javascript },
+  { name: 'TypeScript', icon: typescript },
+  { name: 'React JS', icon: reactjs },
+  { name: 'Redux Toolkit', icon: redux },
+  { name: 'Tailwind CSS', icon: tailwind },
+  { name: 'Node JS', icon: nodejs },
+  { name: 'MongoDB', icon: mongodb },
+  { name: 'Git', icon: git },
+  { name: 'Figma', icon: figma },
+  { name: 'Docker', icon: docker },
 ];
 
-const experiences = [
+// Work experiences
+export const experiences = [
   {
     title: 'Mobile Application Tester',
     company_name: 'Mugla Sitki Kocman University',
-    icon: mobile, // reusing mobile icon; update if you have a dedicated one
+    icon: mobile, // reusing the mobile icon (update if you have a dedicated one)
     iconBg: '#E6DEDD',
     date: 'Jul 2021 - Aug 2021',
     points: [
@@ -149,7 +100,8 @@ const experiences = [
   },
 ];
 
-const testimonials = [
+// Testimonials from clients or colleagues
+export const testimonials = [
   {
     testimonial:
       'I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.',
@@ -176,7 +128,8 @@ const testimonials = [
   },
 ];
 
-const projects = [
+// Projects portfolio
+export const projects = [
   {
     name: 'Restaurant Orders Application',
     description:
@@ -269,7 +222,7 @@ const projects = [
       { name: 'Docker', color: 'green-text-gradient' },
       { name: 'Express', color: 'pink-text-gradient' },
     ],
-    image: library, // NEW: Ensure the 'library' asset is added
+    image: library, // Ensure the 'library' asset is added
     source_code_link: 'https://github.com/wael-kabouk/kitabi-kitabuk-frontend',
   },
   {
@@ -281,9 +234,7 @@ const projects = [
       { name: 'YOLOv8', color: 'green-text-gradient' },
       { name: 'OpenCV', color: 'pink-text-gradient' },
     ],
-    image: multicam, // NEW: Ensure the 'multicam' asset is added
+    image: multicam, // Ensure the 'multicam' asset is added
     source_code_link: 'https://github.com/wael-kabouk/virtual_context',
   },
 ];
-
-export { services, technologies, experiences, testimonials, projects };
