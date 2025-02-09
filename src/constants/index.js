@@ -186,8 +186,7 @@ const projects = [
       { name: 'Java', color: 'green-text-gradient' },
     ],
     image: restaurantOrders, // Ensure this asset is added
-    source_code_link:
-      'https://github.com/wael-kabouk/RestaurantOrdersApplication',
+    source_code_link: 'https://github.com/wael-kabouk',
   },
   {
     name: 'Mental Health Analysis',
@@ -199,7 +198,7 @@ const projects = [
       { name: 'Data Analysis', color: 'pink-text-gradient' },
     ],
     image: mentalHealth, // Ensure this asset is added
-    source_code_link: 'https://github.com/wael-kabouk/MentalHealthAnalysis',
+    source_code_link: 'https://github.com/mertcd/Mental-Health-Analysis',
   },
   {
     name: 'Solar Powered Irrigation System',
@@ -211,8 +210,7 @@ const projects = [
       { name: 'GSM', color: 'pink-text-gradient' },
     ],
     image: irrigation, // Ensure this asset is added
-    source_code_link:
-      'https://github.com/wael-kabouk/SolarPoweredIrrigationSystem',
+    source_code_link: 'https://github.com/wael-kabouk',
   },
   {
     name: 'WT-Capital Web-App',
@@ -224,7 +222,7 @@ const projects = [
       { name: 'Web Development', color: 'pink-text-gradient' },
     ],
     image: wtcapital, // Ensure this asset is added
-    source_code_link: 'https://github.com/wael-kabouk/WTCapitalWebApp',
+    source_code_link: 'https://github.com/wael-kabouk/wt-capital',
   },
   {
     name: 'Vehicles Detector',
@@ -236,7 +234,7 @@ const projects = [
       { name: 'Computer Vision', color: 'pink-text-gradient' },
     ],
     image: vehiclesDetector, // Ensure this asset is added
-    source_code_link: 'https://github.com/wael-kabouk/VehiclesDetector',
+    source_code_link: 'https://github.com/wael-kabouk',
   },
   {
     name: 'Movies Review Website',
@@ -248,7 +246,7 @@ const projects = [
       { name: 'React', color: 'pink-text-gradient' },
     ],
     image: moviesReview, // Ensure this asset is added
-    source_code_link: 'https://github.com/wael-kabouk/MoviesReviewWebsite',
+    source_code_link: 'https://github.com/wael-kabouk/movies_api',
   },
   {
     name: 'Tekram Telegram Chatbot',
@@ -260,7 +258,7 @@ const projects = [
       { name: 'Python', color: 'pink-text-gradient' },
     ],
     image: tekram, // Ensure this asset is added
-    source_code_link: 'https://github.com/wael-kabouk/TekramChatbot',
+    source_code_link: 'https://github.com/wael-kabouk/tekram_bot',
   },
   {
     name: 'Library Management System',
@@ -272,7 +270,7 @@ const projects = [
       { name: 'Express', color: 'pink-text-gradient' },
     ],
     image: library, // NEW: Ensure the 'library' asset is added
-    source_code_link: 'https://github.com/wael-kabouk/LibraryManagementSystem',
+    source_code_link: 'https://github.com/wael-kabouk/kitabi-kitabuk-frontend',
   },
   {
     name: 'Multi-Camera Object Detection',
@@ -284,8 +282,7 @@ const projects = [
       { name: 'OpenCV', color: 'pink-text-gradient' },
     ],
     image: multicam, // NEW: Ensure the 'multicam' asset is added
-    source_code_link:
-      'https://github.com/wael-kabouk/MultiCameraObjectDetection',
+    source_code_link: 'https://github.com/wael-kabouk/virtual_context',
   },
 ];
 
