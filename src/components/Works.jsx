@@ -16,26 +16,30 @@ const ProjectCard = ({
   image,
   source_code_link,
 }) => {
-  // Check if the screen width is below 640px (mobile breakpoint)
+  // Determine if the device should disable tilt (mobile/touch devices)
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 640);
+      // Consider a device mobile if:
+      // 1. The width is less than 640px OR
+      // 2. The device has no hover capability and a coarse pointer (common for touch devices)
+      const isSmall = window.innerWidth < 640;
+      const isTouch =
+        window.matchMedia &&
+        window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+      setIsMobile(isSmall || isTouch);
     };
 
-    // Set initial value and add event listener
+    // Set initial state and add resize listener
     handleResize();
     window.addEventListener('resize', handleResize);
-
-    // Cleanup listener on unmount
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Common card content for both mobile and desktop
   const cardContent = (
     <>
-      {/* Use an aspect ratio container for responsive images */}
+      {/* Responsive image container using an aspect ratio */}
       <div className="relative w-full aspect-video">
         <img
           src={image}
@@ -56,17 +60,16 @@ const ProjectCard = ({
         </div>
       </div>
 
+      {/* Project title and description */}
       <div className="mt-5">
         <h3 className="text-white font-bold text-lg sm:text-[24px]">{name}</h3>
         <p className="mt-2 text-secondary text-sm sm:text-[14px]">{description}</p>
       </div>
 
+      {/* Project tags */}
       <div className="mt-4 flex flex-wrap gap-2">
         {tags.map((tag) => (
-          <p
-            key={`${name}-${tag.name}`}
-            className={`text-xs sm:text-[14px] ${tag.color}`}
-          >
+          <p key={`${name}-${tag.name}`} className={`text-xs sm:text-[14px] ${tag.color}`}>
             #{tag.name}
           </p>
         ))}
@@ -77,12 +80,12 @@ const ProjectCard = ({
   return (
     <motion.div variants={fadeIn('up', 'spring', index * 0.5, 0.75)}>
       {isMobile ? (
-        // Render a static div on mobile
+        // Render without Tilt on mobile/touch devices
         <div className="bg-tertiary p-5 rounded-2xl w-full">
           {cardContent}
         </div>
       ) : (
-        // Render the tilt effect on larger screens
+        // Use Tilt on non-mobile devices
         <Tilt
           options={{
             max: 45,
@@ -115,7 +118,7 @@ const Works = () => {
         </motion.p>
       </div>
 
-      {/* Center the project cards and wrap them responsively */}
+      {/* Projects grid */}
       <div className="mt-20 flex flex-wrap gap-7 justify-center">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
