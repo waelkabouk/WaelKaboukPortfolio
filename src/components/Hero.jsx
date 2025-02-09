@@ -28,7 +28,7 @@ const Hero = () => {
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
             I develop high quality
-            <br className="sm:block hidden" />
+            <br />
             web, mobile and AI applications
           </p>
         </div>

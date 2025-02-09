@@ -19,152 +19,132 @@ import {
   starbucks,
   tesla,
   shopify,
-  carrent,
-  jobit,
-  tripguide,
-  threejs,
-} from "../assets";
+  // New project assets – please ensure these are added to your assets folder:
+  restaurantOrders,
+  mentalHealth,
+  irrigation,
+  wtcapital,
+  vehiclesDetector,
+  moviesReview,
+  tekram,
+  library, // Library Management System icon/image
+  multicam, // Multi-Camera Object Detection icon/image
+} from '../assets';
 
 export const navLinks = [
   {
-    id: "about",
-    title: "About",
+    id: 'about',
+    title: 'About',
   },
   {
-    id: "work",
-    title: "Work",
+    id: 'work',
+    title: 'Work',
   },
   {
-    id: "contact",
-    title: "Contact",
+    id: 'contact',
+    title: 'Contact',
   },
 ];
 
 const services = [
   {
-    title: "Web Developer",
+    title: 'Web Developer',
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: 'Mobile Developer',
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: 'AI Developer',
     icon: backend,
-  },
-  {
-    title: "Content Creator",
-    icon: creator,
   },
 ];
 
 const technologies = [
   {
-    name: "HTML 5",
+    name: 'HTML 5',
     icon: html,
   },
   {
-    name: "CSS 3",
+    name: 'CSS 3',
     icon: css,
   },
   {
-    name: "JavaScript",
+    name: 'JavaScript',
     icon: javascript,
   },
   {
-    name: "TypeScript",
+    name: 'TypeScript',
     icon: typescript,
   },
   {
-    name: "React JS",
+    name: 'React JS',
     icon: reactjs,
   },
   {
-    name: "Redux Toolkit",
+    name: 'Redux Toolkit',
     icon: redux,
   },
   {
-    name: "Tailwind CSS",
+    name: 'Tailwind CSS',
     icon: tailwind,
   },
   {
-    name: "Node JS",
+    name: 'Node JS',
     icon: nodejs,
   },
   {
-    name: "MongoDB",
+    name: 'MongoDB',
     icon: mongodb,
   },
   {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
-    name: "git",
+    name: 'git',
     icon: git,
   },
   {
-    name: "figma",
+    name: 'figma',
     icon: figma,
   },
   {
-    name: "docker",
+    name: 'docker',
     icon: docker,
   },
 ];
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
-    iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    title: 'Mobile Application Tester',
+    company_name: 'Mugla Sitki Kocman University',
+    icon: mobile, // reusing mobile icon; update if you have a dedicated one
+    iconBg: '#E6DEDD',
+    date: 'Jul 2021 - Aug 2021',
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      'Tested diverse Android applications using the Appium environment.',
+      'Conducted performance evaluations by comparing real devices with emulators.',
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
-    iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    title: 'Mobile Application Developer',
+    company_name: 'Mugla Sitki Kocman University',
+    icon: mobile,
+    iconBg: '#383E56',
+    date: 'Aug 2022 - Sep 2022',
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      'Developed a full-stack E-Commerce mobile application using Flutter (front-end) and Node.js (back-end).',
+      'Participated in all development phases to ensure a high-quality final product.',
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
-    iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
+    title: 'Web Developer',
+    company_name: 'Kyber Tech',
+    icon: web,
+    iconBg: '#E6DEDD',
+    date: 'Jan 2023 - Feb 2023',
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      'Built comprehensive full-stack websites using React.js and Next.js.',
+      'Designed and implemented an engaging online platform for a marble company.',
+      'Ensured optimal user experience through responsive design and performance optimizations.',
     ],
   },
 ];
@@ -172,93 +152,140 @@ const experiences = [
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+      'I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.',
+    name: 'Sara Lee',
+    designation: 'CFO',
+    company: 'Acme Co',
+    image: 'https://randomuser.me/api/portraits/women/4.jpg',
   },
   {
     testimonial:
       "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
+    name: 'Chris Brown',
+    designation: 'COO',
+    company: 'DEF Corp',
+    image: 'https://randomuser.me/api/portraits/men/5.jpg',
   },
   {
     testimonial:
       "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    name: 'Lisa Wang',
+    designation: 'CTO',
+    company: '456 Enterprises',
+    image: 'https://randomuser.me/api/portraits/women/6.jpg',
   },
 ];
 
 const projects = [
   {
-    name: "Car Rent",
+    name: 'Restaurant Orders Application',
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      'A robust Android app developed using Java in Android Studio that enables users to order food from a designated restaurant with ease.',
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
+      { name: 'Android', color: 'blue-text-gradient' },
+      { name: 'Java', color: 'green-text-gradient' },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: restaurantOrders, // Ensure this asset is added
+    source_code_link:
+      'https://github.com/wael-kabouk/RestaurantOrdersApplication',
   },
   {
-    name: "Job IT",
+    name: 'Mental Health Analysis',
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      'A machine learning project using R and Jupyter Notebook to predict mental health consequences based on survey data, comparing SVM, ANN, and Logistic Regression models.',
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
+      { name: 'R', color: 'blue-text-gradient' },
+      { name: 'Machine Learning', color: 'green-text-gradient' },
+      { name: 'Data Analysis', color: 'pink-text-gradient' },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: mentalHealth, // Ensure this asset is added
+    source_code_link: 'https://github.com/wael-kabouk/MentalHealthAnalysis',
   },
   {
-    name: "Trip Guide",
+    name: 'Solar Powered Irrigation System',
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      'An innovative embedded system that automates agricultural irrigation using solar power and GSM technology, integrating sensors and an Arduino micro-controller for real-time control.',
     tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
+      { name: 'Embedded Systems', color: 'blue-text-gradient' },
+      { name: 'Arduino', color: 'green-text-gradient' },
+      { name: 'GSM', color: 'pink-text-gradient' },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: irrigation, // Ensure this asset is added
+    source_code_link:
+      'https://github.com/wael-kabouk/SolarPoweredIrrigationSystem',
+  },
+  {
+    name: 'WT-Capital Web-App',
+    description:
+      'A captivating portfolio website for WT-Capital, showcasing products, services, promotions, news, and events. Developed with Next.js and Sanity.io to provide a seamless user experience.',
+    tags: [
+      { name: 'Next.js', color: 'blue-text-gradient' },
+      { name: 'Sanity.io', color: 'green-text-gradient' },
+      { name: 'Web Development', color: 'pink-text-gradient' },
+    ],
+    image: wtcapital, // Ensure this asset is added
+    source_code_link: 'https://github.com/wael-kabouk/WTCapitalWebApp',
+  },
+  {
+    name: 'Vehicles Detector',
+    description:
+      'A Python-based computer vision project using YOLOv8 and OpenCV for real-time vehicle detection and counting on highways, ensuring accurate tracking in diverse conditions.',
+    tags: [
+      { name: 'YOLOv8', color: 'blue-text-gradient' },
+      { name: 'OpenCV', color: 'green-text-gradient' },
+      { name: 'Computer Vision', color: 'pink-text-gradient' },
+    ],
+    image: vehiclesDetector, // Ensure this asset is added
+    source_code_link: 'https://github.com/wael-kabouk/VehiclesDetector',
+  },
+  {
+    name: 'Movies Review Website',
+    description:
+      'A full-stack movie review application featuring a decoupled architecture. Built with Spring Boot for the backend, MongoDB for the database, and React for the frontend, it allows parallel development of client and server components.',
+    tags: [
+      { name: 'Spring Boot', color: 'blue-text-gradient' },
+      { name: 'MongoDB', color: 'green-text-gradient' },
+      { name: 'React', color: 'pink-text-gradient' },
+    ],
+    image: moviesReview, // Ensure this asset is added
+    source_code_link: 'https://github.com/wael-kabouk/MoviesReviewWebsite',
+  },
+  {
+    name: 'Tekram Telegram Chatbot',
+    description:
+      'An advanced Telegram chatbot developed using pyTelegramBotAPI, featuring a robust, multilingual database tailored for students in Sakarya Province to enhance communication and access to information.',
+    tags: [
+      { name: 'Telegram', color: 'blue-text-gradient' },
+      { name: 'Chatbot', color: 'green-text-gradient' },
+      { name: 'Python', color: 'pink-text-gradient' },
+    ],
+    image: tekram, // Ensure this asset is added
+    source_code_link: 'https://github.com/wael-kabouk/TekramChatbot',
+  },
+  {
+    name: 'Library Management System',
+    description:
+      'A robust full-stack web application built with the MERN stack (MongoDB, Express, React, Node.js) that streamlines library operations, including book inventory, user administration, and lending functionalities. Docker is used for containerization and deployment.',
+    tags: [
+      { name: 'MERN', color: 'blue-text-gradient' },
+      { name: 'Docker', color: 'green-text-gradient' },
+      { name: 'Express', color: 'pink-text-gradient' },
+    ],
+    image: library, // NEW: Ensure the 'library' asset is added
+    source_code_link: 'https://github.com/wael-kabouk/LibraryManagementSystem',
+  },
+  {
+    name: 'Multi-Camera Object Detection',
+    description:
+      'A multi-camera object detection system employing a virtual context approach with YOLOv8. This project integrates multiple video feeds for real-time detection and tracking, showcasing advanced computer vision techniques and robust algorithm design.',
+    tags: [
+      { name: 'Computer Vision', color: 'blue-text-gradient' },
+      { name: 'YOLOv8', color: 'green-text-gradient' },
+      { name: 'OpenCV', color: 'pink-text-gradient' },
+    ],
+    image: multicam, // NEW: Ensure the 'multicam' asset is added
+    source_code_link:
+      'https://github.com/wael-kabouk/MultiCameraObjectDetection',
   },
 ];
 

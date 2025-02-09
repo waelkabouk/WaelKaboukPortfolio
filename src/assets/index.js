@@ -30,7 +30,16 @@ import carrent from './carrent.png';
 import jobit from './jobit.png';
 import tripguide from './tripguide.png';
 import desktop from './desktop.png';
+import library from './library.jpg';
+import multicam from './multicamera.png';
 
+import restaurantOrders from './restaurandOrders.png';
+import mentalHealth from './mentalHealth.webp';
+import irrigation from './irrigation.png';
+import wtcapital from './wtcapital.png';
+import vehiclesDetector from './vehicleDetector.png';
+import moviesReview from './moviesReview.png';
+import tekram from './tekram.png';
 export {
   logo,
   backend,
@@ -61,4 +70,13 @@ export {
   jobit,
   tripguide,
   desktop,
+  library,
+  multicam,
+  restaurantOrders,
+  mentalHealth,
+  irrigation,
+  wtcapital,
+  vehiclesDetector,
+  moviesReview,
+  tekram,
 };
