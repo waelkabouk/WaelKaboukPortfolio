@@ -1,21 +1,9 @@
 import React from 'react';
-import Tilt from 'react-tilt';
-import { motion } from 'framer-motion';
-
 import { styles } from '../styles';
 import { github } from '../assets';
-import { SectionWrapper } from '../hoc';
 import { projects } from '../constants';
-import { fadeIn, textVariant } from '../utils/motion';
 
-const ProjectCard = ({
-  index,
-  name,
-  description,
-  tags,
-  image,
-  source_code_link,
-}) => {
+const ProjectCard = ({ name, description, tags, image, source_code_link }) => {
   return (
     <motion.div
       variants={fadeIn('up', 'spring', index * 0.5, 0.75)}
@@ -95,11 +83,11 @@ const Works = () => {
 
       <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 auto-rows-fr">
         {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
+          <ProjectCard key={`project-${index}`} {...project} />
         ))}
       </div>
     </div>
   );
 };
 
-export default SectionWrapper(Works, '');
+export default Works;
