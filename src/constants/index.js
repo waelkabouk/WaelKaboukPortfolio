@@ -28,8 +28,8 @@ import {
   vehiclesDetector,
   moviesReview,
   tekram,
-  library,      // Library Management System icon/image
-  multicam,     // Multi-Camera Object Detection icon/image
+  library, // Library Management System icon/image
+  multicam, // Multi-Camera Object Detection icon/image
 } from '../assets';
 
 // Navigation links
