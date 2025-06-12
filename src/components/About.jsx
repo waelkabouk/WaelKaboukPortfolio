@@ -107,34 +107,6 @@ const About = () => {
         Let's work together to bring your vision to life and accelerate your
         business growth.
       </motion.p>
-
-      {/* 3D Interactive Tech Showcase */}
-      <motion.div
-        variants={fadeIn('up', 'spring', 0.5, 0.75)}
-        className="mt-20 flex flex-col items-center"
-      >
-        <div className="w-full h-[500px] bg-gradient-to-b from-transparent to-primary/5 rounded-2xl overflow-hidden">
-          <Canvas
-            camera={{ position: [0, 0, 8], fov: 45 }}
-            style={{ background: 'transparent' }}
-          >
-            <ambientLight intensity={0.5} />
-            <pointLight position={[10, 10, 10]} intensity={1} />
-            <pointLight
-              position={[-10, -10, -10]}
-              intensity={0.5}
-              color="#915EFF"
-            />
-            <TechCube />
-            <OrbitControls
-              enableZoom={false}
-              enablePan={false}
-              autoRotate
-              autoRotateSpeed={0.5}
-            />
-          </Canvas>
-        </div>
-      </motion.div>
     </>
   );
 };
