@@ -1,39 +1,90 @@
-import React from 'react';
-import Tilt from 'react-tilt';
+import React, { useRef } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { Text, Box, OrbitControls } from '@react-three/drei';
 import { motion } from 'framer-motion';
 
 import { styles } from '../styles';
-import { services } from '../constants';
 import { SectionWrapper } from '../hoc';
 import { fadeIn, textVariant } from '../utils/motion';
 
-const ServiceCard = ({ index, title, icon }) => (
-  <Tilt className="xs:w-[250px] w-full">
-    <motion.div
-      variants={fadeIn('right', 'spring', index * 0.5, 0.75)}
-      className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
-    >
-      <div
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
-      >
-        <img
-          src={icon}
-          alt="web-development"
-          className="w-16 h-16 object-contain"
-        />
+// 3D Floating Tech Cube Component
+const TechCube = () => {
+  const meshRef = useRef();
+  const groupRef = useRef();
 
-        <h3 className="text-white text-[20px] font-bold text-center">
-          {title}
-        </h3>
-      </div>
-    </motion.div>
-  </Tilt>
-);
+  useFrame((state, delta) => {
+    if (meshRef.current) {
+      meshRef.current.rotation.x += delta * 0.2;
+      meshRef.current.rotation.y += delta * 0.3;
+    }
+    if (groupRef.current) {
+      groupRef.current.rotation.y += delta * 0.1;
+    }
+  });
+
+  const services = [
+    { text: 'Web Dev', position: [0, 0, 1.1], color: '#915EFF' },
+    { text: 'Mobile', position: [0, 0, -1.1], color: '#FF6B6B' },
+    { text: 'Backend', position: [1.1, 0, 0], color: '#4ECDC4' },
+    { text: 'Frontend', position: [-1.1, 0, 0], color: '#45B7D1' },
+    { text: 'AI', position: [0, 1.1, 0], color: '#96CEB4' },
+    { text: 'DevOps', position: [0, -1.1, 0], color: '#FFEAA7' },
+  ];
+
+  return (
+    <group ref={groupRef}>
+      {/* Main rotating cube */}
+      <mesh ref={meshRef}>
+        <boxGeometry args={[2, 2, 2]} />
+        <meshStandardMaterial
+          color="#1a1a2e"
+          transparent
+          opacity={0.1}
+          wireframe
+        />
+      </mesh>
+
+      {/* Service labels floating around the cube */}
+      {services.map((service, index) => (
+        <group key={index} position={service.position}>
+          <mesh>
+            <sphereGeometry args={[0.1, 16, 16]} />
+            <meshStandardMaterial color={service.color} />
+          </mesh>
+          <Text
+            position={[0, -0.3, 0]}
+            fontSize={0.2}
+            color={service.color}
+            anchorX="center"
+            anchorY="middle"
+            font="/fonts/helvetiker_regular.typeface.json" // You may need to adjust this path
+          >
+            {service.text}
+          </Text>
+        </group>
+      ))}
+
+      {/* Orbiting particles */}
+      {Array.from({ length: 20 }).map((_, i) => {
+        const angle = (i / 20) * Math.PI * 2;
+        const radius = 3;
+        return (
+          <mesh
+            key={i}
+            position={[
+              Math.cos(angle) * radius,
+              Math.sin(angle * 0.5) * 0.5,
+              Math.sin(angle) * radius,
+            ]}
+          >
+            <sphereGeometry args={[0.02, 8, 8]} />
+            <meshStandardMaterial color="#915EFF" />
+          </mesh>
+        );
+      })}
+    </group>
+  );
+};
 
 const About = () => {
   return (
@@ -47,20 +98,43 @@ const About = () => {
         variants={fadeIn('', '', 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        I’m a Software Engineer with expertise in full-stack development,
-        machine learning, and embedded systems. Skilled in React.js, Next.js,
-        Spring Boot, and the MERN stack, I build scalable web and mobile
-        applications. My experience includes AI-powered analytics, IoT
-        solutions, and real-time object detection using YOLOv8. Passionate about
-        solving complex problems and optimizing performance, I thrive in
-        dynamic, collaborative environments. Let’s build something great!
+        I help businesses transform their ideas into powerful digital
+        experiences. As a Software Engineer, I create custom websites, mobile
+        applications, and smart business tools that engage customers and
+        streamline operations. From e-commerce platforms to data analytics
+        dashboards, I build technology solutions that are not only beautiful and
+        user-friendly, but also drive measurable results for your bottom line.
+        Let's work together to bring your vision to life and accelerate your
+        business growth.
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-10">
-        {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
-        ))}
-      </div>
+      {/* 3D Interactive Tech Showcase */}
+      <motion.div
+        variants={fadeIn('up', 'spring', 0.5, 0.75)}
+        className="mt-20 flex flex-col items-center"
+      >
+        <div className="w-full h-[500px] bg-gradient-to-b from-transparent to-primary/5 rounded-2xl overflow-hidden">
+          <Canvas
+            camera={{ position: [0, 0, 8], fov: 45 }}
+            style={{ background: 'transparent' }}
+          >
+            <ambientLight intensity={0.5} />
+            <pointLight position={[10, 10, 10]} intensity={1} />
+            <pointLight
+              position={[-10, -10, -10]}
+              intensity={0.5}
+              color="#915EFF"
+            />
+            <TechCube />
+            <OrbitControls
+              enableZoom={false}
+              enablePan={false}
+              autoRotate
+              autoRotateSpeed={0.5}
+            />
+          </Canvas>
+        </div>
+      </motion.div>
     </>
   );
 };

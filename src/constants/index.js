@@ -227,9 +227,9 @@ const projects = [
   {
     name: 'Vehicles Detector',
     description:
-      'A Python-based computer vision project using YOLOv8 and OpenCV for real-time vehicle detection and counting on highways, ensuring accurate tracking in diverse conditions.',
+      'A Python-based computer vision project using YOLO11 and OpenCV for real-time vehicle detection and counting on highways, ensuring accurate tracking in diverse conditions.',
     tags: [
-      { name: 'YOLOv8', color: 'blue-text-gradient' },
+      { name: 'YOLO11', color: 'blue-text-gradient' },
       { name: 'OpenCV', color: 'green-text-gradient' },
       { name: 'Computer Vision', color: 'pink-text-gradient' },
     ],
@@ -275,10 +275,10 @@ const projects = [
   {
     name: 'Multi-Camera Object Detection',
     description:
-      'A multi-camera object detection system employing a virtual context approach with YOLOv8. This project integrates multiple video feeds for real-time detection and tracking, showcasing advanced computer vision techniques and robust algorithm design.',
+      'A multi-camera object detection system employing a virtual context approach with YOLOv11. This project integrates multiple video feeds for real-time detection and tracking, showcasing advanced computer vision techniques and robust algorithm design.',
     tags: [
       { name: 'Computer Vision', color: 'blue-text-gradient' },
-      { name: 'YOLOv8', color: 'green-text-gradient' },
+      { name: 'YOLO11', color: 'green-text-gradient' },
       { name: 'OpenCV', color: 'pink-text-gradient' },
     ],
     image: multicam, // NEW: Ensure the 'multicam' asset is added

@@ -8,51 +8,64 @@ import { slideIn } from '../utils/motion';
 
 const Contact = () => {
   return (
-    <div className={`flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}>
+    <div
+      className={`flex xl:flex-row flex-col-reverse gap-6 sm:gap-8 lg:gap-10 overflow-hidden`}
+    >
       <motion.div
         variants={slideIn('left', 'tween', 0.2, 1)}
-        className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
+        className="flex-[0.75] bg-black-100 p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl"
       >
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
 
-        <div className="mt-12 flex flex-col gap-8">
-          <div className="flex items-center gap-4">
-            <span className="text-white font-medium">LinkedIn:</span>
+        <div className="mt-8 sm:mt-10 md:mt-12 flex flex-col gap-4 sm:gap-6 md:gap-8">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+            <span className="text-white font-medium text-sm sm:text-base min-w-[80px] sm:min-w-[100px]">
+              LinkedIn:
+            </span>
             <a
               href="https://www.linkedin.com/in/wael-kabouk-832768219/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-secondary hover:underline"
+              className="text-secondary hover:underline text-sm sm:text-base break-all sm:break-normal transition-colors duration-300"
             >
               wael-kabouk-832768219
             </a>
           </div>
-          <div className="flex items-center gap-4">
-            <span className="text-white font-medium">GitHub:</span>
+
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+            <span className="text-white font-medium text-sm sm:text-base min-w-[80px] sm:min-w-[100px]">
+              GitHub:
+            </span>
             <a
               href="https://github.com/wael-kabouk"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-secondary hover:underline"
+              className="text-secondary hover:underline text-sm sm:text-base break-all sm:break-normal transition-colors duration-300"
             >
               wael-kabouk
             </a>
           </div>
-          <div className="flex items-center gap-4">
-            <span className="text-white font-medium">Phone:</span>
+
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+            <span className="text-white font-medium text-sm sm:text-base min-w-[80px] sm:min-w-[100px]">
+              Phone:
+            </span>
             <a
               href="tel:+905525121411"
-              className="text-secondary hover:underline"
+              className="text-secondary hover:underline text-sm sm:text-base transition-colors duration-300"
             >
               +90 552 512 14 11
             </a>
           </div>
-          <div className="flex items-center gap-4">
-            <span className="text-white font-medium">Email:</span>
+
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+            <span className="text-white font-medium text-sm sm:text-base min-w-[80px] sm:min-w-[100px]">
+              Email:
+            </span>
             <a
               href="mailto:waelkabouk.business@gmail.com"
-              className="text-secondary hover:underline"
+              className="text-secondary hover:underline text-sm sm:text-base break-all sm:break-normal transition-colors duration-300"
             >
               waelkabouk.business@gmail.com
             </a>
@@ -62,7 +75,7 @@ const Contact = () => {
 
       <motion.div
         variants={slideIn('right', 'tween', 0.2, 1)}
-        className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
+        className="xl:flex-1 w-full h-[300px] xs:h-[350px] sm:h-[400px] md:h-[500px] lg:h-[550px] xl:h-auto"
       >
         <EarthCanvas />
       </motion.div>
