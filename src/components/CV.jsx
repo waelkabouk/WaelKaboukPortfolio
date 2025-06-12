@@ -96,7 +96,7 @@ const EyeIcon = ({ className = 'w-4 h-4 sm:w-5 sm:h-5' }) => (
 
 const CVDownload = ({
   cvUrl = 'WaelKabouk_SoftwareEngineer.pdf',
-  fileName = 'Wael_Kabouk_CV.pdf',
+  fileName = 'WaelKabouk_SoftwareEngineer_CV.pdf',
   lastUpdated = 'January 2025',
 }) => {
   const [isDownloading, setIsDownloading] = React.useState(false);
@@ -322,7 +322,7 @@ const CVDownload = ({
 // Enhanced compact version with animations
 export const CVDownloadCompact = ({
   cvUrl = 'WaelKabouk_SoftwareEngineer.pdf',
-  fileName = 'Wael_Kabouk_CV.pdf',
+  fileName = 'WaelKabouk_SoftwareEngineer_CV.pdf',
   showText = true,
 }) => {
   const [isDownloading, setIsDownloading] = React.useState(false);
@@ -426,7 +426,7 @@ export const CVDownloadCompact = ({
 // Animated inline version for navigation bars
 export const CVDownloadInline = ({
   cvUrl = 'WaelKabouk_SoftwareEngineer.pdf',
-  fileName = 'Wael_Kabouk_CV.pdf',
+  fileName = 'WaelKabouk_SoftwareEngineer_CV.pdf',
 }) => {
   const [isHovered, setIsHovered] = React.useState(false);
 
