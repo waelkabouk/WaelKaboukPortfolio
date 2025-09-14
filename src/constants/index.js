@@ -131,15 +131,15 @@ export const testimonials = [
 // Projects portfolio
 export const projects = [
   {
-    name: 'Restaurant Orders Application',
+    name: 'Multi-Vendor E-Commerce Cross-Platform App',
     description:
-      'A robust Android app developed using Java in Android Studio that enables users to order food from a designated restaurant with ease.',
+      'A robust cross-platform app developed using Flutter and Express.Js that enables users to order various products from different vendors with ease.',
     tags: [
-      { name: 'Android', color: 'blue-text-gradient' },
-      { name: 'Java', color: 'green-text-gradient' },
+      { name: 'Flutter', color: 'blue-text-gradient' },
+      { name: 'Express.Js', color: 'green-text-gradient' },
     ],
     image: restaurantOrders, // Ensure this asset is added
-    source_code_link: 'https://github.com/wael-kabouk',
+    source_code_link: 'https://github.com/waelkabouk/multi-vendor-genie-store-cross-platform',
   },
   {
     name: 'Mental Health Analysis',
@@ -163,7 +163,7 @@ export const projects = [
       { name: 'GSM', color: 'pink-text-gradient' },
     ],
     image: irrigation, // Ensure this asset is added
-    source_code_link: 'https://github.com/wael-kabouk',
+    source_code_link: 'https://github.com/waelkabouk',
   },
   {
     name: 'WT-Capital Web-App',
@@ -175,10 +175,10 @@ export const projects = [
       { name: 'Web Development', color: 'pink-text-gradient' },
     ],
     image: wtcapital, // Ensure this asset is added
-    source_code_link: 'https://github.com/wael-kabouk/wt-capital',
+    source_code_link: 'https://github.com/waelkabouk/wt-capital',
   },
   {
-    name: 'Vehicles Detector',
+    name: 'Vehicles Detecting System',
     description:
       'A Python-based computer vision project using YOLO11 and OpenCV for real-time vehicle detection and counting on highways, ensuring accurate tracking in diverse conditions.',
     tags: [
@@ -187,7 +187,7 @@ export const projects = [
       { name: 'Computer Vision', color: 'pink-text-gradient' },
     ],
     image: vehiclesDetector, // Ensure this asset is added
-    source_code_link: 'https://github.com/wael-kabouk',
+    source_code_link: 'https://github.com/waelkabouk/virtual-context-multi-camera-tracking ',
   },
   {
     name: 'Movies Review Website',
@@ -199,7 +199,7 @@ export const projects = [
       { name: 'React', color: 'pink-text-gradient' },
     ],
     image: moviesReview, // Ensure this asset is added
-    source_code_link: 'https://github.com/wael-kabouk/movies_api',
+    source_code_link: 'https://github.com/waelkabouk/movies_api',
   },
   {
     name: 'Tekram Telegram Chatbot',
@@ -211,7 +211,7 @@ export const projects = [
       { name: 'Python', color: 'pink-text-gradient' },
     ],
     image: tekram, // Ensure this asset is added
-    source_code_link: 'https://github.com/wael-kabouk/tekram_bot',
+    source_code_link: 'https://github.com/waelkabouk/tekram_bot',
   },
   {
     name: 'Library Management System',
@@ -223,10 +223,10 @@ export const projects = [
       { name: 'Express', color: 'pink-text-gradient' },
     ],
     image: library, // Ensure the 'library' asset is added
-    source_code_link: 'https://github.com/wael-kabouk/kitabi-kitabuk-frontend',
+    source_code_link: 'https://github.com/waelkabouk/kitabi-kitabuk-frontend',
   },
   {
-    name: 'Multi-Camera Object Detection',
+    name: 'Multi-Camera Object Tracking System',
     description:
       'A multi-camera object detection system employing a virtual context approach with YOLOv11. This project integrates multiple video feeds for real-time detection and tracking, showcasing advanced computer vision techniques and robust algorithm design.',
     tags: [
@@ -235,6 +235,6 @@ export const projects = [
       { name: 'OpenCV', color: 'pink-text-gradient' },
     ],
     image: multicam, // Ensure the 'multicam' asset is added
-    source_code_link: 'https://github.com/wael-kabouk/virtual_context',
+    source_code_link: 'https://github.com/waelkabouk/virtual-context-multi-camera-tracking ',
   },
 ];
