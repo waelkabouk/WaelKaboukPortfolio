@@ -12,9 +12,10 @@ import { github } from '../assets';
 import { SectionWrapper } from '../hoc';
 import { projects } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
+import PrivateProjectModal from './PrivateProjectModal';
 
 // Optimized Custom Tilt Component with better performance
-const CustomTilt = ({ children, className }) => {
+const CustomTilt = ({ children, className, onClick }) => {
   const [transform, setTransform] = useState('');
   const [isHovered, setIsHovered] = useState(false);
   const elementRef = useRef(null);
@@ -82,10 +83,13 @@ const CustomTilt = ({ children, className }) => {
   // Improved mobile touch interactions
   const handleTouchStart = useCallback((e) => {
     if (isDesktop.current) return;
-    e.preventDefault(); // Prevent default touch behavior
+    // Don't prevent default if there's an onClick handler (for navigation)
+    if (!onClick) {
+      e.preventDefault();
+    }
 
     setTransform('perspective(1000px) scale3d(0.97, 0.97, 0.97)');
-  }, []);
+  }, [onClick]);
 
   const handleTouchEnd = useCallback(() => {
     if (isDesktop.current) return;
@@ -122,12 +126,13 @@ const CustomTilt = ({ children, className }) => {
   return (
     <div
       ref={elementRef}
-      className={`${className} cursor-pointer`}
+      className={className}
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
+      onClick={onClick}
       style={transitionStyle}
     >
       {children}
@@ -142,8 +147,11 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
+  project_link,
+  isPrivate,
 }) => {
   const cardRef = useRef(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const isInView = useInView(cardRef, {
     once: true,
     margin: '0px 0px 50px 0px',
@@ -158,11 +166,34 @@ const ProjectCard = ({
     }
   }, [isInView, controls]);
 
+  // Handle card click to navigate to project link
+  const handleCardClick = useCallback(
+    (e) => {
+      // Don't navigate if clicking on the GitHub button or its parent
+      if (
+        e.target.closest('button') ||
+        e.target.closest('[aria-label*="source code"]')
+      ) {
+        return;
+      }
+      if (project_link) {
+        try {
+          window.open(project_link, '_blank', 'noopener,noreferrer');
+        } catch (error) {
+          console.error('Failed to open project link:', error);
+        }
+      }
+    },
+    [project_link]
+  );
+
   // Optimized click handler with error handling
   const handleGitHubClick = useCallback(
     (e) => {
       e.stopPropagation();
-      if (source_code_link) {
+      if (isPrivate) {
+        setIsModalOpen(true);
+      } else if (source_code_link) {
         try {
           window.open(source_code_link, '_blank', 'noopener,noreferrer');
         } catch (error) {
@@ -170,7 +201,7 @@ const ProjectCard = ({
         }
       }
     },
-    [source_code_link]
+    [source_code_link, isPrivate]
   );
 
   // Memoized tag animations
@@ -190,7 +221,12 @@ const ProjectCard = ({
       animate={controls}
       className="w-full"
     >
-      <CustomTilt className="bg-tertiary p-4 sm:p-5 rounded-2xl w-full h-full flex flex-col shadow-lg hover:shadow-2xl transition-shadow duration-300 will-change-transform">
+      <CustomTilt
+        className={`bg-tertiary p-4 sm:p-5 rounded-2xl w-full h-full flex flex-col shadow-lg hover:shadow-2xl transition-shadow duration-300 will-change-transform ${
+          project_link ? 'cursor-pointer' : ''
+        }`}
+        onClick={project_link ? handleCardClick : undefined}
+      >
         <div className="relative w-full h-[200px] sm:h-[230px] group overflow-hidden rounded-2xl">
           <img
             src={image}
@@ -306,6 +342,11 @@ const ProjectCard = ({
           </motion.div>
         </div>
       </CustomTilt>
+      <PrivateProjectModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        projectName={name}
+      />
     </motion.div>
   );
 };

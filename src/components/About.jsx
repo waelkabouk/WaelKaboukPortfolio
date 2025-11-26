@@ -98,14 +98,10 @@ const About = () => {
         variants={fadeIn('', '', 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        I help businesses transform their ideas into powerful digital
-        experiences. As a Software Engineer, I create custom websites, mobile
-        applications, and smart business tools that engage customers and
-        streamline operations. From e-commerce platforms to data analytics
-        dashboards, I build technology solutions that are not only beautiful and
-        user-friendly, but also drive measurable results for your bottom line.
-        Let's work together to bring your vision to life and accelerate your
-        business growth.
+        AI & Software Engineer with expertise in computer vision, generative AI, and agentic automation. Built and deployed end-to
+        end AI systems using YOLO, OpenCV, LangChain, and LangGraph, achieving measurable improvements including 81.3%
+        tracking accuracy and 40% automation efficiency gains. Strong software engineering foundation across MERN, Next.js,
+        Python, and cloud deployment. Passionate about building production-ready AI systems that deliver real business value
       </motion.p>
     </>
   );

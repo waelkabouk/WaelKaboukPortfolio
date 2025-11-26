@@ -30,6 +30,8 @@ import {
   tekram,
   library, // Library Management System icon/image
   multicam, // Multi-Camera Object Detection icon/image
+  meezahsa, // Meezah Marketing Services website image
+  befit, // BeFit Control Panel image
 } from '../assets';
 
 // Navigation links
@@ -163,7 +165,8 @@ export const projects = [
       { name: 'GSM', color: 'pink-text-gradient' },
     ],
     image: irrigation, // Ensure this asset is added
-    source_code_link: 'https://github.com/waelkabouk',
+    source_code_link: '',
+    isPrivate: true,
   },
   {
     name: 'WT-Capital Web-App',
@@ -236,5 +239,32 @@ export const projects = [
     ],
     image: multicam, // Ensure the 'multicam' asset is added
     source_code_link: 'https://github.com/waelkabouk/virtual-context-multi-camera-tracking ',
+  },
+  {
+    name: 'Meezah Marketing Services Website',
+    description:
+      'A comprehensive marketing services website for Meezah (ميزة لخدمات التسويق) showcasing services, projects, and company information. Built with Next.js and PostgreSQL for a modern, performant web experience with robust data management.',
+    tags: [
+      { name: 'Next.js', color: 'blue-text-gradient' },
+      { name: 'PostgreSQL', color: 'green-text-gradient' },
+      { name: 'Web Development', color: 'pink-text-gradient' },
+    ],
+    image: meezahsa,
+    project_link: 'https://www.meezahsa.com/',
+    source_code_link: '',
+    isPrivate: true,
+  },
+  {
+    name: 'BeFit Control Panel',
+    description:
+      'A comprehensive control panel for managing football field reservations for BeFit academy in Dubai. Features dashboard management, reservation system, and bilingual support (English/Arabic). Built with React, Vite, and Express for a fast and efficient user experience.',
+    tags: [
+      { name: 'React', color: 'blue-text-gradient' },
+      { name: 'Vite', color: 'green-text-gradient' },
+      { name: 'Express', color: 'pink-text-gradient' },
+    ],
+    image: befit,
+    project_link: '',
+    source_code_link: 'https://github.com/waelkabouk/befit-control-panel',
   },
 ];

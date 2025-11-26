@@ -24,12 +24,12 @@ const Contact = () => {
               LinkedIn:
             </span>
             <a
-              href="https://www.linkedin.com/in/wael-kabouk-832768219/"
+              href="https://www.linkedin.com/in/waelkabouk/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-secondary hover:underline text-sm sm:text-base break-all sm:break-normal transition-colors duration-300"
             >
-              wael-kabouk-832768219
+              waelkabouk
             </a>
           </div>
 
@@ -38,12 +38,12 @@ const Contact = () => {
               GitHub:
             </span>
             <a
-              href="https://github.com/wael-kabouk"
+              href="https://github.com/waelkabouk"
               target="_blank"
               rel="noopener noreferrer"
               className="text-secondary hover:underline text-sm sm:text-base break-all sm:break-normal transition-colors duration-300"
             >
-              wael-kabouk
+              waelkabouk
             </a>
           </div>
 
@@ -52,10 +52,10 @@ const Contact = () => {
               Phone:
             </span>
             <a
-              href="tel:+905525121411"
+              href="tel:+966571872756"
               className="text-secondary hover:underline text-sm sm:text-base transition-colors duration-300"
             >
-              +90 552 512 14 11
+              +966 571 872 756
             </a>
           </div>
 

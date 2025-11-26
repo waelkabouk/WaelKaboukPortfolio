@@ -1,4 +1,4 @@
-import logo from './logo.png';
+import logo from './me.jpg';
 import backend from './backend.png';
 import creator from './creator.png';
 import mobile from './mobile.png';
@@ -40,6 +40,8 @@ import wtcapital from './wtcapital.png';
 import vehiclesDetector from './vehicleDetector.png';
 import moviesReview from './moviesReview.png';
 import tekram from './tekram.png';
+import meezahsa from './meezahsa.png';
+import befit from './befit.png';
 export {
   logo,
   backend,
@@ -79,4 +81,6 @@ export {
   vehiclesDetector,
   moviesReview,
   tekram,
+  meezahsa,
+  befit,
 };
