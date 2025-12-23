@@ -1,36 +1,39 @@
 import { motion } from 'framer-motion';
-import { desktop } from '../assets';
 import { styles } from '../styles';
+import { ComputersCanvas } from './canvas';
 
 const Hero = () => {
   return (
-    <section className={`relative w-full h-screen mx-auto`}>
-      {/* Image Container */}
-      <div className="absolute inset-y-0 right-0 w-full max-w-4xl mx-auto z-0">
-        <img
-          src={desktop}
-          alt="Desktop interface"
-          className="w-full h-full object-contain object-center opacity-80"
-        />
-      </div>
-
+    <section className={`relative w-full h-screen mx-auto overflow-hidden`}>
+      {/* Main Content Container */}
       <div
-        className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5 z-10`}
+        className={`relative z-20 max-w-7xl mx-auto ${styles.paddingX} flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 lg:gap-12 h-full pt-[100px] md:pt-[120px] pb-20`}
       >
-        <div className="flex flex-col justify-center items-center mt-5">
-          <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
-          <div className="w-1 sm:h-80 h-40 violet-gradient" />
+        {/* Text Content */}
+        <div className="flex flex-row items-start gap-5 flex-1 w-full md:w-auto">
+          <div className="flex flex-col justify-center items-center mt-5">
+            <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
+            <div className="w-1 sm:h-80 h-40 violet-gradient" />
+          </div>
+
+          <div className="relative flex-1">
+            <h1 className={`${styles.heroHeadText} text-white`}>
+              Hi, I'm <span className="text-[#915EFF]">Wael</span>
+            </h1>
+            <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+              MSc Software Engineer | Computer Vision Specialist
+            </p>
+            <p className={`${styles.heroSubText} mt-4 text-white-100 text-[18px] sm:text-[20px]`}>
+              I develop high quality web, mobile and AI applications,
+              <br />
+              bridging cutting-edge research with production-ready solutions
+            </p>
+          </div>
         </div>
 
-        <div className="relative">
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className="text-[#915EFF]">Wael</span>
-          </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I develop high quality
-            <br />
-            web, mobile and AI applications
-          </p>
+        {/* 3D Computer Model */}
+        <div className="flex-1 w-full md:w-1/2 lg:w-2/5 min-h-[400px] h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] relative flex items-center justify-center">
+          <ComputersCanvas />
         </div>
       </div>
 

@@ -98,10 +98,11 @@ const About = () => {
         variants={fadeIn('', '', 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        AI & Software Engineer with expertise in computer vision, generative AI, and agentic automation. Built and deployed end-to
-        end AI systems using YOLO, OpenCV, LangChain, and LangGraph, achieving measurable improvements including 81.3%
-        tracking accuracy and 40% automation efficiency gains. Strong software engineering foundation across MERN, Next.js,
-        Python, and cloud deployment. Passionate about building production-ready AI systems that deliver real business value
+        AI & Software Engineer bridging academic research with industry applications. My work spans from developing novel 
+        multi-camera tracking algorithms (achieving 81.3% cross-view identity consistency) to building production-ready web 
+        and mobile applications for clients. I specialize in computer vision, multi-object tracking, and multimodal AI systems, 
+        with hands-on experience deploying scalable solutions using YOLO, OpenCV, LangChain, and modern web technologies. 
+        Passionate about translating cutting-edge research into practical systems that solve real-world problems.
       </motion.p>
     </>
   );

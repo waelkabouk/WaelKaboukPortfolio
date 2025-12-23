@@ -37,7 +37,12 @@ import {
 // Navigation links
 export const navLinks = [
   { id: 'about', title: 'About' },
-  { id: 'work', title: 'Work' },
+  { id: 'education', title: 'Education' },
+  { id: 'publications', title: 'Publications' },
+  { id: 'experience', title: 'Experience' },
+  { id: 'works', title: 'Works' },
+  { id: 'skills', title: 'Skills' },
+  { id: 'languages', title: 'Languages' },
   { id: 'contact', title: 'Contact' },
 ];
 
@@ -64,41 +69,198 @@ export const technologies = [
   { name: 'Docker', icon: docker },
 ];
 
-// Work experiences
-export const experiences = [
+// Technical Skills categorized
+export const skillsData = [
   {
-    title: 'Mobile Application Tester',
-    company_name: 'Mugla Sitki Kocman University',
-    icon: mobile, // reusing the mobile icon (update if you have a dedicated one)
-    iconBg: '#E6DEDD',
-    date: 'Jul 2021 - Aug 2021',
-    points: [
-      'Tested diverse Android applications using the Appium environment.',
-      'Conducted performance evaluations by comparing real devices with emulators.',
+    name: 'AI',
+    icon: '🤖',
+    skills: [
+      'Python',
+      'C++',
+      'PyTorch',
+      'TensorFlow',
+      'OpenCV',
+      'YOLO (v11)',
+      'ByteTrack',
+      'vLLM',
+      'LangGraph',
+      'LangChain',
+      'CLIP',
+      'FAISS',
+      'Scikit-learn',
+      'MLflow',
     ],
   },
   {
-    title: 'Mobile Application Developer',
-    company_name: 'Mugla Sitki Kocman University',
-    icon: mobile,
-    iconBg: '#383E56',
-    date: 'Aug 2022 - Sep 2022',
-    points: [
-      'Developed a full-stack E-Commerce mobile application using Flutter (front-end) and Node.js (back-end).',
-      'Participated in all development phases to ensure a high-quality final product.',
+    name: 'Full Stack',
+    icon: '💻',
+    skills: [
+      'React',
+      'Next.js',
+      'Flutter (Dart)',
+      'PyQt',
+      'FastAPI',
+      'Express',
+      'Node.js',
+      'PostgreSQL',
+      'MongoDB',
+      'SQL',
     ],
   },
   {
-    title: 'Web Developer',
+    name: 'DevOps & Tools',
+    icon: '⚙️',
+    skills: ['Docker', 'Kubernetes', 'Git', 'AWS', 'Linux CLI'],
+  },
+];
+
+// Languages with proficiency levels
+export const languagesData = [
+  {
+    name: 'Arabic',
+    nativeName: 'العربية',
+    proficiency: 'Native',
+  },
+  {
+    name: 'English',
+    nativeName: 'English',
+    proficiency: 'C1',
+  },
+  {
+    name: 'Turkish',
+    nativeName: 'Türkçe',
+    proficiency: 'B2',
+  },
+];
+
+// Academic & Research experiences (reverse chronological order)
+export const researchExperiences = [
+  {
+    title: 'Virtual Context Multi-Camera Tracking',
+    company_name: 'MSc Thesis Research - Sakarya University',
+    icon: backend,
+    iconBg: '#4ECDC4',
+    date: 'Oct 2023 - Sep 2025',
+    category: 'research',
+    points: [
+      'Developed "Virtual Context Stacking" method that eliminates re-identification layer in multi-camera tracking pipeline.',
+      'Achieved 81.3% cross-view identity consistency rate and sustained 30 FPS performance on standard hardware.',
+      'Engineered unified pipeline using YOLO v11 and ByteTrack, bypassing need for explicit re-identification networks.',
+      'Built modular evaluation tool using PyQt5 and OpenCV for reproducible testing.',
+    ],
+  },
+  {
+    title: 'Hybrid Semantic-Governance Framework (HSGF)',
+    company_name: 'Independent Research',
+    icon: backend,
+    iconBg: '#06B6D4',
+    date: '2024 - Present',
+    category: 'research',
+    points: [
+      'Designed "Semantic Governance" hierarchical control system using rigid linguistic attributes to audit track associations.',
+      'Engineered robust pipeline combining OC-SORT and YOLO11 with Microsoft Florence-2 VLM for attribute reasoning.',
+      'Developed functional Proof-of-Concept prototype capable of detecting identity conflicts in offline tests.',
+      'Stack: PyTorch, OpenCV, HuggingFace Transformers, and LanceDB (Vector Store).',
+    ],
+  },
+];
+
+// Industry experiences (reverse chronological order)
+export const industryExperiences = [
+  {
+    title: 'AI & Software Engineer',
+    company_name: 'Self-Employed',
+    icon: backend,
+    iconBg: '#915EFF',
+    date: 'Oct 2023 - Present',
+    category: 'industry',
+    points: [
+      'Designed and delivered scalable AI-driven web applications for clients using Next.js and TypeScript.',
+      'Implemented hexagonal architecture to decouple UI logic from inference APIs.',
+      'Restructured database schemas for high-traffic platforms, reducing query latency through advanced indexing strategies in PostgreSQL.',
+    ],
+  },
+  {
+    title: 'Associate Software Engineer',
     company_name: 'Kyber Tech',
     icon: web,
-    iconBg: '#E6DEDD',
-    date: 'Jan 2023 - Feb 2023',
+    iconBg: '#6366F1',
+    date: 'Jan 2023 - Jun 2023',
+    category: 'industry',
     points: [
+      'Developed feature-complete web modules and optimized frontend rendering using the MERN stack.',
       'Built comprehensive full-stack websites using React.js and Next.js.',
-      'Designed and implemented an engaging online platform for a marble company.',
       'Ensured optimal user experience through responsive design and performance optimizations.',
     ],
+  },
+];
+
+// Teaching & Leadership experiences (reverse chronological order)
+export const teachingExperiences = [
+  {
+    title: 'Technical Lead',
+    company_name: 'Syria Students Union',
+    icon: web,
+    iconBg: '#F59E0B',
+    date: 'Oct 2023 - Oct 2024',
+    category: 'teaching',
+    points: [
+      'Led development of automated Telegram bot using Python to handle high-volume student inquiries.',
+      'Managed technical architecture and deployment for remote team collaboration.',
+    ],
+  },
+  {
+    title: 'Programming Instructor',
+    company_name: 'Youth Center - Mugla',
+    icon: creator,
+    iconBg: '#FB923C',
+    date: 'Oct 2022 - Jul 2023',
+    category: 'teaching',
+    points: [
+      'Designed curriculum and taught Python/C++ fundamentals, focusing on algorithmic problem-solving.',
+      'Mentored students through full software development lifecycle, from debugging to deployment.',
+    ],
+  },
+];
+
+// Combined experiences array for backward compatibility (if needed)
+export const experiences = [
+  ...researchExperiences,
+  ...industryExperiences,
+  ...teachingExperiences,
+];
+
+// Publications (reverse chronological order)
+export const publications = [
+  {
+    authors: ['W. Kabouk', 'A. Özmen'],
+    title: 'Virtual Context-Based Multi-Camera Vehicle Tracking',
+    conference: '3rd International Ankara Scientific Research and Innovation Congress',
+    publisher: 'International Science and Art Research Center',
+    location: 'Ankara, Turkey',
+    date: 'July 2025',
+    pages: '413-429',
+    category: 'research',
+    keyAchievement: 'Proposed "Virtual Context Stacking" method that eliminates re-identification layer in multi-camera tracking pipeline achieving up to 81.3% cross-view identity consistency rate.',
+  },
+  {
+    authors: [
+      'W. Kabouk',
+      'A. N. Alyahya',
+      'M. M. Alhusseini',
+      'M. A. Al shabaan',
+    ],
+    title:
+      'Integrating Demographic and Clinical Features in Heart Attack Prediction using Machine Learning Models',
+    conference:
+      '6th International Conference on Engineering and Applied Natural Sciences',
+    publisher: 'All Sciences Academy',
+    location: 'Konya, Turkey',
+    date: 'June 2025',
+    pages: '30-39',
+    category: 'research',
+    keyAchievement:
+      'Validated Random Forest, KNN, and AdaBoost classifiers on clinical datasets, identifying high-risk cardiovascular patients with 71% accuracy.',
   },
 ];
 
@@ -171,7 +333,7 @@ export const projects = [
   {
     name: 'WT-Capital Web-App',
     description:
-      'A captivating portfolio website for WT-Capital, showcasing products, services, promotions, news, and events. Developed with Next.js and Sanity.io to provide a seamless user experience.',
+      'Production-ready portfolio website for WT-Capital, showcasing products, services, promotions, news, and events. Developed with Next.js and Sanity.io, demonstrating practical application of modern web technologies for client deliverables.',
     tags: [
       { name: 'Next.js', color: 'blue-text-gradient' },
       { name: 'Sanity.io', color: 'green-text-gradient' },
@@ -183,7 +345,7 @@ export const projects = [
   {
     name: 'Vehicles Detecting System',
     description:
-      'A Python-based computer vision project using YOLO11 and OpenCV for real-time vehicle detection and counting on highways, ensuring accurate tracking in diverse conditions.',
+      'A Python-based computer vision project using YOLO11 and OpenCV for real-time vehicle detection and counting on highways. Part of research work exploring practical applications of computer vision in traffic monitoring systems.',
     tags: [
       { name: 'YOLO11', color: 'blue-text-gradient' },
       { name: 'OpenCV', color: 'green-text-gradient' },
@@ -231,11 +393,11 @@ export const projects = [
   {
     name: 'Multi-Camera Object Tracking System',
     description:
-      'A multi-camera object detection system employing a virtual context approach with YOLOv11. This project integrates multiple video feeds for real-time detection and tracking, showcasing advanced computer vision techniques and robust algorithm design.',
+      'MSc thesis research project: A novel multi-camera tracking system using "Virtual Context Stacking" method. Achieves 81.3% cross-view identity consistency and 30 FPS performance by eliminating re-identification layers. Integrates YOLO v11 and ByteTrack in a unified pipeline, demonstrating how research innovations translate to production-ready computer vision systems.',
     tags: [
       { name: 'Computer Vision', color: 'blue-text-gradient' },
       { name: 'YOLO11', color: 'green-text-gradient' },
-      { name: 'OpenCV', color: 'pink-text-gradient' },
+      { name: 'Research', color: 'pink-text-gradient' },
     ],
     image: multicam, // Ensure the 'multicam' asset is added
     source_code_link: 'https://github.com/waelkabouk/virtual-context-multi-camera-tracking ',
@@ -243,7 +405,7 @@ export const projects = [
   {
     name: 'Meezah Marketing Services Website',
     description:
-      'A comprehensive marketing services website for Meezah (ميزة لخدمات التسويق) showcasing services, projects, and company information. Built with Next.js and PostgreSQL for a modern, performant web experience with robust data management.',
+      'Client project: A comprehensive marketing services website for Meezah (ميزة لخدمات التسويق) showcasing services, projects, and company information. Built with Next.js and PostgreSQL, featuring optimized database schemas and advanced indexing for high-traffic performance.',
     tags: [
       { name: 'Next.js', color: 'blue-text-gradient' },
       { name: 'PostgreSQL', color: 'green-text-gradient' },
