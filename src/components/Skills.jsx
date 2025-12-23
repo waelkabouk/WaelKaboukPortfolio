@@ -9,7 +9,7 @@ import { skillsData } from '../constants';
 const SkillCategoryCard = ({ category, skills, index }) => {
   return (
     <motion.div
-      variants={fadeIn('up', 'spring', index * 0.2, 0.75)}
+      variants={fadeIn('up', 'tween', index * 0.1, 0.3)}
       className="relative bg-tertiary p-6 sm:p-8 rounded-2xl border-2 border-transparent hover:border-[#915EFF]/50 transition-all duration-300 group"
     >
       {/* Category Badge */}
@@ -21,13 +21,12 @@ const SkillCategoryCard = ({ category, skills, index }) => {
       <div className="mt-4 pr-20 sm:pr-24">
         <div className="flex flex-wrap gap-3 sm:gap-4">
           {skills.map((skill, idx) => (
-            <motion.span
+            <span
               key={idx}
-              variants={fadeIn('up', 'spring', (index * 0.2) + (idx * 0.05), 0.5)}
               className="inline-block bg-black-200 px-4 py-2 rounded-lg text-white-100 text-sm sm:text-base font-medium hover:bg-black-300 hover:text-white transition-all duration-300 border border-transparent hover:border-[#915EFF]/30"
             >
               {skill}
-            </motion.span>
+            </span>
           ))}
         </div>
       </div>
@@ -51,7 +50,7 @@ const Skills = () => {
       </motion.div>
 
       <motion.div
-        variants={staggerContainer(0.1, 0.1)}
+        variants={staggerContainer(0.05, 0.05)}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.25 }}
