@@ -3,6 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 
 import CanvasLoader from '../Loader';
+import { desktop } from '../../assets';
 
 const Computers = ({ isMobile }) => {
   // useGLTF caches the loaded model automatically
@@ -36,31 +37,44 @@ const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Detect if the device width is 500px or less
+    // Add a listener for changes to the screen size
     const mediaQuery = window.matchMedia('(max-width: 500px)');
+
+    // Set the initial value of the `isMobile` state variable
     setIsMobile(mediaQuery.matches);
 
+    // Define a callback function to handle changes to the media query
     const handleMediaQueryChange = (event) => {
       setIsMobile(event.matches);
     };
 
+    // Add the callback function as a listener for changes to the media query
     mediaQuery.addEventListener('change', handleMediaQueryChange);
 
+    // Remove the listener when the component is unmounted
     return () => {
       mediaQuery.removeEventListener('change', handleMediaQueryChange);
     };
   }, []);
 
+  if (isMobile) {
+    return (
+      <div className="w-full h-full flex justify-center items-center">
+        <img
+          src={desktop}
+          alt="desktop"
+          className="w-[80%] h-auto object-contain"
+        />
+      </div>
+    );
+  }
+
   return (
     <Canvas
       frameloop="demand"
-      // Disable shadows on mobile for improved performance
-      shadows={!isMobile}
-      // Lower dpr on mobile to reduce the pixel count (set to 1)
-      dpr={isMobile ? 1 : [1, 2]}
+      shadows
       camera={{ position: [20, 3, 5], fov: 25 }}
-      // Disable preserveDrawingBuffer to improve GPU performance
-      gl={{ preserveDrawingBuffer: false }}
+      gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls

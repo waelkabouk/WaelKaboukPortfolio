@@ -48,9 +48,9 @@ export const navLinks = [
 
 // Services provided
 export const services = [
-  { title: 'Web Developer', icon: web },
-  { title: 'Mobile Developer', icon: mobile },
-  { title: 'AI Developer', icon: backend },
+  { title: 'Computer Vision Specialist', icon: backend },
+  { title: 'MSc Software Engineer', icon: web },
+  { title: 'Full Stack Developer', icon: mobile },
 ];
 
 // Technologies used
@@ -298,15 +298,28 @@ export const testimonials = [
 // Projects portfolio
 export const projects = [
   {
-    name: 'Multi-Vendor E-Commerce Cross-Platform App',
+    name: 'Multi-Camera Object Tracking System',
     description:
-      'A robust cross-platform app developed using Flutter and Express.Js that enables users to order various products from different vendors with ease.',
+      'MSc thesis research project: A novel multi-camera tracking system using "Virtual Context Stacking" method. Achieves 81.3% cross-view identity consistency and 30 FPS performance by eliminating re-identification layers. Integrates YOLO v11 and ByteTrack in a unified pipeline, demonstrating how research innovations translate to production-ready computer vision systems.',
     tags: [
-      { name: 'Flutter', color: 'blue-text-gradient' },
-      { name: 'Express.Js', color: 'green-text-gradient' },
+      { name: 'Computer Vision', color: 'blue-text-gradient' },
+      { name: 'YOLO11', color: 'green-text-gradient' },
+      { name: 'Research', color: 'pink-text-gradient' },
     ],
-    image: restaurantOrders, // Ensure this asset is added
-    source_code_link: 'https://github.com/waelkabouk/multi-vendor-genie-store-cross-platform',
+    image: multicam, // Ensure the 'multicam' asset is added
+    source_code_link: 'https://github.com/waelkabouk/virtual-context-multi-camera-tracking ',
+  },
+  {
+    name: 'Vehicles Detecting System',
+    description:
+      'A Python-based computer vision project using YOLO11 and OpenCV for real-time vehicle detection and counting on highways. Part of research work exploring practical applications of computer vision in traffic monitoring systems.',
+    tags: [
+      { name: 'YOLO11', color: 'blue-text-gradient' },
+      { name: 'OpenCV', color: 'green-text-gradient' },
+      { name: 'Computer Vision', color: 'pink-text-gradient' },
+    ],
+    image: vehiclesDetector, // Ensure this asset is added
+    source_code_link: 'https://github.com/waelkabouk/virtual-context-multi-camera-tracking ',
   },
   {
     name: 'Mental Health Analysis',
@@ -319,6 +332,18 @@ export const projects = [
     ],
     image: mentalHealth, // Ensure this asset is added
     source_code_link: 'https://github.com/mertcd/Mental-Health-Analysis',
+  },
+  {
+    name: 'Tekram Telegram Chatbot',
+    description:
+      'An advanced Telegram chatbot developed using pyTelegramBotAPI, featuring a robust, multilingual database tailored for students in Sakarya Province to enhance communication and access to information.',
+    tags: [
+      { name: 'Telegram', color: 'blue-text-gradient' },
+      { name: 'Chatbot', color: 'green-text-gradient' },
+      { name: 'Python', color: 'pink-text-gradient' },
+    ],
+    image: tekram, // Ensure this asset is added
+    source_code_link: 'https://github.com/waelkabouk/tekram_bot',
   },
   {
     name: 'Solar Powered Irrigation System',
@@ -334,6 +359,17 @@ export const projects = [
     isPrivate: true,
   },
   {
+    name: 'Multi-Vendor E-Commerce Cross-Platform App',
+    description:
+      'A robust cross-platform app developed using Flutter and Express.Js that enables users to order various products from different vendors with ease.',
+    tags: [
+      { name: 'Flutter', color: 'blue-text-gradient' },
+      { name: 'Express.Js', color: 'green-text-gradient' },
+    ],
+    image: restaurantOrders, // Ensure this asset is added
+    source_code_link: 'https://github.com/waelkabouk/multi-vendor-genie-store-cross-platform',
+  },
+  {
     name: 'WT-Capital Web-App',
     description:
       'Production-ready portfolio website for WT-Capital, showcasing products, services, promotions, news, and events. Developed with Next.js and Sanity.io, demonstrating practical application of modern web technologies for client deliverables.',
@@ -344,18 +380,6 @@ export const projects = [
     ],
     image: wtcapital, // Ensure this asset is added
     source_code_link: 'https://github.com/waelkabouk/wt-capital',
-  },
-  {
-    name: 'Vehicles Detecting System',
-    description:
-      'A Python-based computer vision project using YOLO11 and OpenCV for real-time vehicle detection and counting on highways. Part of research work exploring practical applications of computer vision in traffic monitoring systems.',
-    tags: [
-      { name: 'YOLO11', color: 'blue-text-gradient' },
-      { name: 'OpenCV', color: 'green-text-gradient' },
-      { name: 'Computer Vision', color: 'pink-text-gradient' },
-    ],
-    image: vehiclesDetector, // Ensure this asset is added
-    source_code_link: 'https://github.com/waelkabouk/virtual-context-multi-camera-tracking ',
   },
   {
     name: 'Movies Review Website',
@@ -370,18 +394,6 @@ export const projects = [
     source_code_link: 'https://github.com/waelkabouk/movies_api',
   },
   {
-    name: 'Tekram Telegram Chatbot',
-    description:
-      'An advanced Telegram chatbot developed using pyTelegramBotAPI, featuring a robust, multilingual database tailored for students in Sakarya Province to enhance communication and access to information.',
-    tags: [
-      { name: 'Telegram', color: 'blue-text-gradient' },
-      { name: 'Chatbot', color: 'green-text-gradient' },
-      { name: 'Python', color: 'pink-text-gradient' },
-    ],
-    image: tekram, // Ensure this asset is added
-    source_code_link: 'https://github.com/waelkabouk/tekram_bot',
-  },
-  {
     name: 'Library Management System',
     description:
       'A robust full-stack web application built with the MERN stack (MongoDB, Express, React, Node.js) that streamlines library operations, including book inventory, user administration, and lending functionalities. Docker is used for containerization and deployment.',
@@ -392,18 +404,6 @@ export const projects = [
     ],
     image: library, // Ensure the 'library' asset is added
     source_code_link: 'https://github.com/waelkabouk/kitabi-kitabuk-frontend',
-  },
-  {
-    name: 'Multi-Camera Object Tracking System',
-    description:
-      'MSc thesis research project: A novel multi-camera tracking system using "Virtual Context Stacking" method. Achieves 81.3% cross-view identity consistency and 30 FPS performance by eliminating re-identification layers. Integrates YOLO v11 and ByteTrack in a unified pipeline, demonstrating how research innovations translate to production-ready computer vision systems.',
-    tags: [
-      { name: 'Computer Vision', color: 'blue-text-gradient' },
-      { name: 'YOLO11', color: 'green-text-gradient' },
-      { name: 'Research', color: 'pink-text-gradient' },
-    ],
-    image: multicam, // Ensure the 'multicam' asset is added
-    source_code_link: 'https://github.com/waelkabouk/virtual-context-multi-camera-tracking ',
   },
   {
     name: 'Meezah Marketing Services Website',

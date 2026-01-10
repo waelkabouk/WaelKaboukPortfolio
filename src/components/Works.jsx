@@ -222,9 +222,8 @@ const ProjectCard = ({
       className="w-full"
     >
       <CustomTilt
-        className={`bg-tertiary p-4 sm:p-5 rounded-2xl w-full h-full flex flex-col shadow-lg hover:shadow-2xl transition-shadow duration-300 will-change-transform ${
-          project_link ? 'cursor-pointer' : ''
-        }`}
+        className={`bg-tertiary p-4 sm:p-5 rounded-2xl w-full h-full flex flex-col shadow-lg hover:shadow-2xl transition-shadow duration-300 will-change-transform ${project_link ? 'cursor-pointer' : ''
+          }`}
         onClick={project_link ? handleCardClick : undefined}
       >
         <div className="relative w-full h-[200px] sm:h-[230px] group overflow-hidden rounded-2xl">
@@ -242,10 +241,10 @@ const ProjectCard = ({
           {/* Improved overlay with better mobile support */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out" />
 
-          <div className="absolute inset-0 flex justify-end m-2 sm:m-3 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out transform translate-y-3 group-hover:translate-y-0">
+          <div className="absolute inset-0 flex justify-end m-3 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out transform translate-y-3 group-hover:translate-y-0">
             <motion.button
               onClick={handleGitHubClick}
-              className="black-gradient w-8 h-8 sm:w-10 sm:h-10 rounded-full flex justify-center items-center cursor-pointer transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent backdrop-blur-sm border border-white/20"
+              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent backdrop-blur-sm border border-white/20"
               aria-label={`View source code for ${name} project`}
               type="button"
               whileHover={{
@@ -319,9 +318,8 @@ const ProjectCard = ({
               tags.map((tag, tagIndex) => (
                 <motion.span
                   key={`${name}-${tag.name}-${tagIndex}`}
-                  className={`text-xs sm:text-[12px] px-2 sm:px-3 py-1 rounded-full border border-opacity-50 ${
-                    tag.color || 'text-blue-400'
-                  } border-current bg-current bg-opacity-10 hover:bg-opacity-20 transition-all duration-300 cursor-default select-none`}
+                  className={`text-xs sm:text-[12px] px-2 sm:px-3 py-1 rounded-full border border-opacity-50 ${tag.color || 'text-blue-400'
+                    } border-current bg-current bg-opacity-10 hover:bg-opacity-20 transition-all duration-300 cursor-default select-none`}
                   variants={tagVariants}
                   transition={{
                     duration: 0.2,

@@ -172,7 +172,7 @@ const Experience = () => {
       {/* Tab Navigation */}
       <motion.div
         variants={fadeIn('', '', 0.1, 1)}
-        className="mt-12 flex flex-wrap justify-center gap-1 sm:gap-4 border-b border-[#232631] overflow-x-auto scrollbar-hide"
+        className="mt-12 flex flex-nowrap sm:justify-center justify-start gap-4 overflow-x-auto scrollbar-hide pb-2 px-4 sm:px-0 w-full"
         style={{
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',

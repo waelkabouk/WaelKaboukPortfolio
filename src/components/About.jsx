@@ -98,11 +98,13 @@ const About = () => {
         variants={fadeIn('', '', 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        AI & Software Engineer bridging academic research with industry applications. My work spans from developing novel 
-        multi-camera tracking algorithms (achieving 81.3% cross-view identity consistency) to building production-ready web 
-        and mobile applications for clients. I specialize in computer vision, multi-object tracking, and multimodal AI systems, 
-        with hands-on experience deploying scalable solutions using YOLO, OpenCV, LangChain, and modern web technologies. 
-        Passionate about translating cutting-edge research into practical systems that solve real-world problems.
+        MSc Software Engineer & Computer Vision Specialist bridging cutting-edge academic research with
+        robust industry applications. My work spans from developing novel multi-camera tracking algorithms
+        (achieving 81.3% cross-view identity consistency) to building high-performance web and mobile
+        platforms. I specialize in unified computer vision pipelines, multi-object tracking, and multimodal
+        AI systems, with deep expertise in deploying scalable solutions using YOLO, OpenCV, LangChain,
+        and modern full-stack technologies. Dedicated to translating theoretical innovations into
+        production-grade reliability.
       </motion.p>
     </>
   );

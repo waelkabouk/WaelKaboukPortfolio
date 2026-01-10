@@ -21,7 +21,7 @@ const Hero = () => {
             MSc Software Engineer | Computer Vision Specialist
           </p>
           <p className={`${styles.heroSubText} mt-4 text-white-100 text-[18px] sm:text-[20px]`}>
-            I develop high quality web, mobile and AI applications,
+            I develop high-performance web, mobile, and computer vision systems,
             <br />
             bridging cutting-edge research with production-ready solutions
           </p>
