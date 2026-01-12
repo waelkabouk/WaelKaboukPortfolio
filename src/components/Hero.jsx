@@ -5,30 +5,30 @@ const Hero = () => {
   return (
     <section className={`relative w-full min-h-screen mx-auto flex flex-col justify-center`}>
       <div
-        className={`relative max-w-7xl mx-auto ${styles.paddingX} flex flex-col-reverse lg:flex-row items-center justify-center gap-10 pt-[120px] pb-32 sm:pb-40 lg:pb-10`}
+        className={`relative max-w-7xl mx-auto ${styles.paddingX} flex flex-col-reverse lg:flex-row items-center justify-between gap-10 pt-[120px] pb-32 sm:pb-40 lg:pb-10`}
       >
         {/* Text Content + Line Wrapper */}
-        <div className="w-full lg:w-auto flex flex-row items-start gap-5">
+        <div className="flex flex-row items-start gap-5 flex-1 w-full">
           <div className="flex flex-col justify-center items-center mt-5">
             <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
             <div className="w-1 sm:h-80 h-40 violet-gradient" />
           </div>
 
           <div className="relative">
-            <h1 className={`${styles.heroHeadText} text-white lg:whitespace-nowrap`}>
+            <h1 className={`${styles.heroHeadText} text-white`}>
               Hi, I'm <span className="text-[#915EFF]">Wael</span>
             </h1>
-            <p className={`${styles.heroSubText} mt-2 text-white-100 lg:whitespace-nowrap`}>
+            <h2 className={`${styles.heroSubText} mt-2 text-white-100`}>
               MSc Software Engineer | Computer Vision Specialist
-            </p>
-            <p className={`${styles.heroSubText} mt-2 text-[#dfd9ff] italic lg:whitespace-nowrap`}>
-              From State-of-the-Art to State-of-the-App.
-            </p>
+            </h2>
+            <h3 className={`${styles.heroSubText} mt-2 text-white-100`}>
+              From State-of-the-Art to State-of-the-App.            </h3>
+
           </div>
         </div>
 
         {/* Hero Image */}
-        <div className="flex justify-center items-center relative z-10 lg:ml-10">
+        <div className="flex-1 flex justify-center items-center relative z-10">
           <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[450px] lg:h-[450px]">
             {/* Glow effect */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#915EFF] to-purple-600 rounded-full blur-[50px] opacity-30 -z-10" />
