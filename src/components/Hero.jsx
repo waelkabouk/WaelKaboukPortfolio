@@ -5,39 +5,33 @@ const Hero = () => {
   return (
     <section className={`relative w-full min-h-screen mx-auto flex flex-col justify-center`}>
       <div
-        className={`relative max-w-7xl mx-auto ${styles.paddingX} flex flex-col-reverse lg:flex-row items-center justify-between gap-10 pt-[120px] pb-32 sm:pb-40 lg:pb-10`}
+        className={`relative max-w-7xl mx-auto ${styles.paddingX} flex flex-col-reverse lg:flex-row items-center justify-center gap-10 pt-[120px] pb-32 sm:pb-40 lg:pb-10`}
       >
         {/* Text Content + Line Wrapper */}
-        <div className="flex flex-row items-start gap-5 flex-1 w-full">
+        <div className="w-full lg:w-auto flex flex-row items-start gap-5">
           <div className="flex flex-col justify-center items-center mt-5">
             <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
             <div className="w-1 sm:h-80 h-40 violet-gradient" />
           </div>
 
           <div className="relative">
-            <h1 className={`${styles.heroHeadText} text-white`}>
+            <h1 className={`${styles.heroHeadText} text-white lg:whitespace-nowrap`}>
               Hi, I'm <span className="text-[#915EFF]">Wael</span>
             </h1>
-            <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+            <p className={`${styles.heroSubText} mt-2 text-white-100 lg:whitespace-nowrap`}>
               MSc Software Engineer | Computer Vision Specialist
             </p>
-            <p className={`${styles.heroSubText} mt-4 text-white-100 text-[18px] sm:text-[20px]`}>
-              I develop high-performance web, mobile, and computer vision systems,
-              <br className="sm:block hidden" />
-              bridging cutting-edge research with production-ready solutions
+            <p className={`${styles.heroSubText} mt-2 text-[#dfd9ff] italic lg:whitespace-nowrap`}>
+              From State-of-the-Art to State-of-the-App.
             </p>
           </div>
         </div>
 
         {/* Hero Image */}
-        <div className="flex-1 flex justify-center items-center relative z-10">
-          <motion.div
-            animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 4, repeat: Infinity, repeatType: "mirror" }}
-            className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[450px] lg:h-[450px]"
-          >
+        <div className="flex justify-center items-center relative z-10 lg:ml-10">
+          <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[450px] lg:h-[450px]">
             {/* Glow effect */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#915EFF] to-purple-600 rounded-full blur-[50px] opacity-30 animate-pulse -z-10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#915EFF] to-purple-600 rounded-full blur-[50px] opacity-30 -z-10" />
 
             <div className="w-full h-full rounded-full border-[3px] border-secondary/30 p-2 relative backdrop-blur-sm bg-purple-900/10 shadow-[0_0_30px_rgba(145,94,255,0.2)]">
               <img
@@ -46,7 +40,7 @@ const Hero = () => {
                 className="w-full h-full object-cover rounded-full shadow-2xl ring-2 ring-purple-500/20 grayscale hover:grayscale-0 transition-all duration-500 ease-in-out"
               />
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 
