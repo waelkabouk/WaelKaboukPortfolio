@@ -21,8 +21,9 @@ const Hero = () => {
             <h2 className={`${styles.heroSubText} mt-2 text-white-100`}>
               MSc Software Engineer | Computer Vision Specialist
             </h2>
-            <h3 className={`${styles.heroSubText} mt-2 text-white-100`}>
-              From State-of-the-Art to State-of-the-App.            </h3>
+            <h3 className={`${styles.heroSubText} mt-2 text-white-50`}>
+              From State-of-the-Art to State-of-the-App.
+            </h3>
 
           </div>
         </div>
