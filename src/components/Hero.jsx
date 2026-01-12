@@ -3,32 +3,54 @@ import { styles } from '../styles';
 
 const Hero = () => {
   return (
-    <section className={`relative w-full h-screen mx-auto`}>
-      {/* Text Content */}
+    <section className={`relative w-full min-h-screen mx-auto flex flex-col justify-center`}>
       <div
-        className={`relative max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5 pt-[120px] pb-4 sm:pb-6`}
+        className={`relative max-w-7xl mx-auto ${styles.paddingX} flex flex-col-reverse lg:flex-row items-center justify-between gap-10 pt-[120px] pb-32 sm:pb-40 lg:pb-10`}
       >
-        <div className="flex flex-col justify-center items-center mt-5">
-          <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
-          <div className="w-1 sm:h-80 h-40 violet-gradient" />
+        {/* Text Content + Line Wrapper */}
+        <div className="flex flex-row items-start gap-5 flex-1 w-full">
+          <div className="flex flex-col justify-center items-center mt-5">
+            <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
+            <div className="w-1 sm:h-80 h-40 violet-gradient" />
+          </div>
+
+          <div className="relative">
+            <h1 className={`${styles.heroHeadText} text-white`}>
+              Hi, I'm <span className="text-[#915EFF]">Wael</span>
+            </h1>
+            <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+              MSc Software Engineer | Computer Vision Specialist
+            </p>
+            <p className={`${styles.heroSubText} mt-4 text-white-100 text-[18px] sm:text-[20px]`}>
+              I develop high-performance web, mobile, and computer vision systems,
+              <br className="sm:block hidden" />
+              bridging cutting-edge research with production-ready solutions
+            </p>
+          </div>
         </div>
 
-        <div className="relative flex-1">
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className="text-[#915EFF]">Wael</span>
-          </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            MSc Software Engineer | Computer Vision Specialist
-          </p>
-          <p className={`${styles.heroSubText} mt-4 text-white-100 text-[18px] sm:text-[20px]`}>
-            I develop high-performance web, mobile, and computer vision systems,
-            <br />
-            bridging cutting-edge research with production-ready solutions
-          </p>
+        {/* Hero Image */}
+        <div className="flex-1 flex justify-center items-center relative z-10">
+          <motion.div
+            animate={{ y: [0, -20, 0] }}
+            transition={{ duration: 4, repeat: Infinity, repeatType: "mirror" }}
+            className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[450px] lg:h-[450px]"
+          >
+            {/* Glow effect */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#915EFF] to-purple-600 rounded-full blur-[50px] opacity-30 animate-pulse -z-10" />
+
+            <div className="w-full h-full rounded-full border-[3px] border-secondary/30 p-2 relative backdrop-blur-sm bg-purple-900/10 shadow-[0_0_30px_rgba(145,94,255,0.2)]">
+              <img
+                src="/wael.png"
+                alt="Wael Kabouk"
+                className="w-full h-full object-cover rounded-full shadow-2xl ring-2 ring-purple-500/20 grayscale hover:grayscale-0 transition-all duration-500 ease-in-out"
+              />
+            </div>
+          </motion.div>
         </div>
       </div>
 
-      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center z-20">
+      <div className="absolute bottom-10 w-full flex justify-center items-center z-20">
         <a href="#about">
           <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
             <motion.div
