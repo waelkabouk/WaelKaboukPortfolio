@@ -1,158 +1,110 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import { styles } from '../styles';
 import { publications } from '../constants';
 import { SectionWrapper } from '../hoc';
-import { textVariant, fadeIn, staggerContainer } from '../utils/motion';
+import { fadeIn, staggerContainer } from '../utils/motion';
+import SectionHeading from './SectionHeading';
 
-// Category-specific color scheme for publications
-const publicationStyle = {
-  accent: '#4ECDC4',
-  accentLight: '#06B6D4',
-  border: '#4ECDC4',
-  bgGradient: 'from-cyan-900/20 to-teal-900/20',
-};
+const yearOf = (date) => (date.match(/\d{4}/) || [''])[0];
 
-const PublicationCard = ({ publication, index }) => {
+const PublicationItem = ({ publication, index }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const maxTitleLength = 80; // Character limit for truncated title
-  const isTitleLong = publication.title.length > maxTitleLength;
-  const truncatedTitle = isTitleLong
-    ? publication.title.substring(0, maxTitleLength) + '...'
-    : publication.title;
+  const panelId = `publication-details-${index}`;
 
   return (
-    <motion.div
-      variants={fadeIn('up', 'spring', index * 0.1, 0.75)}
-      className="relative bg-tertiary p-6 sm:p-8 rounded-2xl border-l-4 mb-6 hover:border-opacity-100 transition-all duration-300"
-      style={{
-        borderLeftColor: publicationStyle.accent,
-        borderLeftWidth: '4px',
-      }}
+    <motion.li
+      variants={fadeIn('up', 'tween', index * 0.1, 0.6)}
+      className="grid md:grid-cols-[160px_1fr] gap-4 md:gap-12 py-10 first:pt-0"
     >
-      {/* Publication Number Badge */}
-      <div
-        className="absolute -top-3 left-6 bg-gradient-to-r from-[#4ECDC4] to-[#06B6D4] px-3 py-1 rounded-full shadow-lg text-white text-xs font-bold"
-      >
-        #{index + 1}
-      </div>
+      <p className="font-serif text-gold text-[40px] sm:text-[48px] leading-none">
+        {yearOf(publication.date)}
+      </p>
 
-      {/* Authors */}
-      <div className="mt-4 mb-3">
-        <p className="text-white text-base sm:text-lg font-semibold">
+      <div>
+        <h3 className="font-serif font-medium text-white text-[22px] sm:text-[26px] leading-[1.2] max-w-[52ch]">
+          {publication.title}
+        </h3>
+        <p className="mt-4 text-white-100 text-[17px]">
           {publication.authors.join(', ')}
         </p>
-      </div>
-
-      {/* Title */}
-      <div className="mb-3">
-        <p className="text-white text-lg sm:text-xl font-bold italic">
-          "{isExpanded || !isTitleLong ? publication.title : truncatedTitle}"
+        <p className="mt-1 text-secondary text-[16px]">
+          {publication.conference}, {publication.date}
         </p>
-      </div>
 
-      {/* Conference/Journal */}
-      <div className="mb-2">
-        <p className="text-secondary text-sm sm:text-base">
-          <span className="font-semibold">In:</span> {publication.conference}
-        </p>
-      </div>
+        <AnimatePresence initial={false}>
+          {isExpanded && (
+            <motion.div
+              id={panelId}
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="overflow-hidden"
+            >
+              <div className="mt-6 bg-tertiary p-6 max-w-[70ch]">
+                <p className="text-white-100 text-[17px] leading-relaxed">
+                  {publication.keyAchievement}
+                </p>
+                <p className="mt-4 text-secondary text-[16px]">
+                  {publication.publisher}, {publication.location}. pp. {publication.pages}.
+                </p>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
-      {/* Date */}
-      <div className="flex flex-wrap gap-4 mb-4 pb-4 border-b border-[#232631]">
-        <div className="flex items-center gap-2">
-          <span className="text-[#4ECDC4] text-sm">📅</span>
-          <span className="text-white-100 text-sm">{publication.date}</span>
+        <div className="mt-5 flex flex-wrap gap-x-8 gap-y-2">
+          <button
+            type="button"
+            onClick={() => setIsExpanded(!isExpanded)}
+            aria-expanded={isExpanded}
+            aria-controls={panelId}
+            className="min-h-[44px] text-white underline decoration-gold decoration-2 underline-offset-[6px] hover:text-gold transition-colors duration-200 text-[16px] font-medium"
+          >
+            {isExpanded ? 'Show less' : 'What it found'}
+          </button>
+          {publication.link && (
+            <a
+              href={publication.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center min-h-[44px] text-secondary hover:text-white underline decoration-transparent hover:decoration-gold decoration-2 underline-offset-[6px] transition-colors duration-200 text-[16px]"
+            >
+              Read the paper (PDF)
+            </a>
+          )}
         </div>
       </div>
-
-      {/* Expandable Content */}
-      <AnimatePresence>
-        {isExpanded && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="overflow-hidden"
-          >
-            {/* Publisher and Location */}
-            <div className="mb-2">
-              <p className="text-white-100 text-sm">
-                {publication.publisher}, {publication.location}
-              </p>
-            </div>
-
-            {/* Pages */}
-            <div className="flex flex-wrap gap-4 mb-4 pb-4 border-b border-[#232631]">
-              <div className="flex items-center gap-2">
-                <span className="text-[#4ECDC4] text-sm">📄</span>
-                <span className="text-white-100 text-sm">pp. {publication.pages}</span>
-              </div>
-            </div>
-
-            {/* Key Achievement */}
-            <div className="mt-4">
-              <p className="text-secondary text-sm font-semibold mb-2">
-                Key Achievement
-              </p>
-              <p className="text-white-100 text-sm sm:text-base leading-relaxed">
-                {publication.keyAchievement}
-              </p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Expand/Collapse Button */}
-      <div className="mt-4 flex justify-center">
-        <button
-          onClick={() => setIsExpanded(!isExpanded)}
-          className="flex items-center gap-2 text-[#4ECDC4] hover:text-[#06B6D4] transition-colors duration-200 font-semibold text-sm sm:text-base"
-        >
-          <span>{isExpanded ? 'Show Less' : 'Read More'}</span>
-          <motion.span
-            animate={{ rotate: isExpanded ? 180 : 0 }}
-            transition={{ duration: 0.3 }}
-            className="text-lg"
-          >
-            ▼
-          </motion.span>
-        </button>
-      </div>
-    </motion.div>
+    </motion.li>
   );
 };
 
 const Publications = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} text-center`}>
-          Research Contributions
-        </p>
-        <h2 className={`${styles.sectionHeadText} text-center`}>Publications.</h2>
-      </motion.div>
+      <SectionHeading
+        title="Publications"
+        line="Conference papers on multi-camera tracking and clinical machine learning."
+      />
 
-      <motion.div
+      <motion.ol
         variants={staggerContainer(0.1, 0.1)}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.25 }}
-        className="mt-12 flex flex-col gap-4"
+        viewport={{ once: true, amount: 0.05 }}
+        className="mt-14 flex flex-col"
       >
         {publications.map((publication, index) => (
-          <PublicationCard
+          <PublicationItem
             key={`publication-${index}`}
             publication={publication}
             index={index}
           />
         ))}
-      </motion.div>
+      </motion.ol>
     </>
   );
 };
 
 export default SectionWrapper(Publications, 'publications');
-

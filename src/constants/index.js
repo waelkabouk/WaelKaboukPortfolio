@@ -32,6 +32,8 @@ import {
   multicam, // Multi-Camera Object Detection icon/image
   meezahsa, // Meezah Marketing Services website image
   befit, // BeFit Control Panel image
+  metalworldSite,
+  metalworldOms,
 } from '../assets';
 
 // Navigation links
@@ -69,51 +71,42 @@ export const technologies = [
   { name: 'Docker', icon: docker },
 ];
 
-// Technical Skills categorized
+// Al Rajhi work is shown only with Wael's explicit approval (brand rule:
+// ask every time). Set to false to hide the role and its figures everywhere.
+export const SHOW_AL_RAJHI = true;
+
+// Technical skills, grouped the way the work is done
 export const skillsData = [
   {
-    name: 'AI',
-    icon: '🤖',
+    name: 'Programming languages',
+    skills: ['Python', 'TypeScript', 'JavaScript', 'C++', 'SQL'],
+  },
+  {
+    name: 'Computer vision',
     skills: [
-      'Python',
-      'C++',
-      'PyTorch',
-      'TensorFlow',
       'OpenCV',
-      'YOLO (v11)',
+      'YOLO11',
       'ByteTrack',
       'OC-SORT',
-      'Microsoft Florence-2',
-      'HuggingFace',
-      'Transformers',
-      'LangGraph',
-      'LangChain',
-      'LanceDB',
-      'FAISS',
-      'Scikit-learn',
-      'MLflow',
+      'Multi-object tracking',
+      'Florence-2 (vision-language model)',
     ],
   },
   {
-    name: 'Full Stack',
-    icon: '💻',
-    skills: [
-      'React',
-      'Next.js',
-      'Flutter (Dart)',
-      'PyQt',
-      'FastAPI',
-      'Express',
-      'Node.js',
-      'PostgreSQL',
-      'MongoDB',
-      'SQL',
-    ],
+    name: 'Machine learning',
+    skills: ['PyTorch', 'TensorFlow', 'scikit-learn', 'Hugging Face Transformers', 'MLflow'],
   },
   {
-    name: 'DevOps & Tools',
-    icon: '⚙️',
-    skills: ['Docker', 'Kubernetes', 'Git', 'AWS', 'Linux CLI'],
+    name: 'LLM and retrieval',
+    skills: ['LangChain', 'LangGraph', 'Retrieval-augmented generation (RAG)', 'FAISS', 'LanceDB'],
+  },
+  {
+    name: 'Web and backend',
+    skills: ['Next.js', 'React', 'FastAPI', 'Node.js', 'Express', 'Spring Boot'],
+  },
+  {
+    name: 'Databases and infrastructure',
+    skills: ['PostgreSQL', 'MongoDB', 'Supabase', 'Docker', 'Kubernetes', 'AWS', 'Git'],
   },
 ];
 
@@ -139,61 +132,82 @@ export const languagesData = [
 // Academic & Research experiences (reverse chronological order)
 export const researchExperiences = [
   {
-    title: 'Virtual Context Multi-Camera Tracking',
-    company_name: 'MSc Thesis Research - Sakarya University',
-    icon: backend,
-    iconBg: '#4ECDC4',
-    date: 'Oct 2023 - Sep 2025',
+    title: 'TEKNOFEST 2026, AI in Health',
+    company_name: 'Team leader',
+    icon: creator,
+    date: '2026',
     category: 'research',
     points: [
-      'Developed "Virtual Context Stacking" method that eliminates re-identification layer in multi-camera tracking pipeline.',
-      'Achieved 81.3% cross-view identity consistency rate and sustained 30 FPS performance on standard hardware.',
-      'Engineered unified pipeline using YOLO v11 and ByteTrack, bypassing need for explicit re-identification networks.',
-      'Built modular evaluation tool using PyQt5 and OpenCV for reproducible testing.',
+      'Led a team classifying genetic variants as pathogenic or benign across 4 gene panels.',
+      'Random Forest and Extra Trees with stratified 5-fold cross-validation and threshold tuning; external data assembled from ClinVar, gnomAD and dbNSFP.',
+      'Reached 0.89 to 0.92 F1 and advanced to the PDR stage (PPR 90%, PDR 89%).',
     ],
   },
   {
     title: 'Hybrid Semantic-Governance Framework (HSGF)',
-    company_name: 'Independent Research',
+    company_name: 'Independent research, proof-of-concept',
     icon: backend,
-    iconBg: '#06B6D4',
     date: '2024 - Present',
     category: 'research',
     points: [
-      'Designed "Semantic Governance" hierarchical control system using rigid linguistic attributes to audit track associations.',
-      'Engineered robust pipeline combining OC-SORT and YOLO11 with Microsoft Florence-2 VLM for attribute reasoning.',
-      'Developed functional Proof-of-Concept prototype capable of detecting identity conflicts in offline tests.',
-      'Stack: PyTorch, OpenCV, HuggingFace Transformers, and LanceDB (Vector Store).',
+      'Trackers swap identities under occlusion. HSGF uses language attributes ("silver sedan") from a local vision-language model, Florence-2, to audit and veto wrong track merges.',
+      'Pipeline: YOLO11 and OC-SORT for tracking, Florence-2 for attributes, LanceDB as the vector store.',
+      'Working proof-of-concept that detects identity conflicts in offline tests.',
+    ],
+  },
+  {
+    title: 'Virtual Context Stacking',
+    company_name: 'MSc thesis on multi-camera vehicle tracking, Sakarya University',
+    icon: backend,
+    date: 'Oct 2023 - Sep 2025',
+    category: 'research',
+    points: [
+      'Multi-camera tracking usually needs geometric calibration and a heavy re-identification network. I normalised regions from every camera into one composite frame, so a single pass tracks across all views: one pipeline instead of N.',
+      'YOLO11 and ByteTrack, with no explicit re-identification network.',
+      '81.3% cross-view identity consistency at 30 FPS on standard hardware.',
+      'Published at the 3rd International Ankara Scientific Research and Innovation Congress (July 2025). Advisor: Prof. Dr. Ahmet Özmen.',
     ],
   },
 ];
 
 // Industry experiences (reverse chronological order)
+const alRajhiExperience = {
+  title: 'AI Systems Architect',
+  company_name: 'Al Rajhi Building and Construction, CEO Office · Riyadh',
+  icon: backend,
+  date: 'Apr 2026 - Present',
+  category: 'industry',
+  points: [
+    'Head the Operations Management Sector, overseeing factory and showroom operations and performance.',
+    'Architected and developed the Operations Management System for Metal World, managing 170+ client contracts across 15 factories and 7 showrooms.',
+    'Built an AI-augmented e-commerce platform for Metal World that generated 713 organic search clicks in its first four months.',
+    'Developed an AI recruitment system that automates candidate screening and ranking.',
+  ],
+};
+
 export const industryExperiences = [
+  ...(SHOW_AL_RAJHI ? [alRajhiExperience] : []),
   {
-    title: 'AI & Software Engineer',
-    company_name: 'Self-Employed',
+    title: 'AI Software Engineer',
+    company_name: 'InnoMerx',
     icon: backend,
-    iconBg: '#915EFF',
     date: 'Oct 2023 - Present',
     category: 'industry',
     points: [
-      'Designed and delivered scalable AI-driven web applications for clients using Next.js and TypeScript.',
-      'Implemented hexagonal architecture to decouple UI logic from inference APIs.',
-      'Restructured database schemas for high-traffic platforms, reducing query latency through advanced indexing strategies in PostgreSQL.',
+      'Design and deliver AI-driven web applications for clients with Next.js, TypeScript and PostgreSQL.',
+      'Hexagonal architecture that keeps UI logic separate from inference APIs.',
+      'Cut database query time by 28% through PostgreSQL indexing and API restructuring.',
     ],
   },
   {
     title: 'Associate Software Engineer',
     company_name: 'Kyber Tech',
     icon: web,
-    iconBg: '#6366F1',
     date: 'Jan 2023 - Jun 2023',
     category: 'industry',
     points: [
-      'Developed feature-complete web modules and optimized frontend rendering using the MERN stack.',
-      'Built comprehensive full-stack websites using React.js and Next.js.',
-      'Ensured optimal user experience through responsive design and performance optimizations.',
+      'Delivered 8 full-stack features on the MERN stack (MongoDB, Express, React, Node.js), including multi-language support and dynamic pages.',
+      'Improved loading speed by 30%.',
     ],
   },
 ];
@@ -202,26 +216,24 @@ export const industryExperiences = [
 export const teachingExperiences = [
   {
     title: 'Technical Lead',
-    company_name: 'Syria Students Union',
+    company_name: 'Syrian Students Union · Sakarya',
     icon: web,
-    iconBg: '#F59E0B',
     date: 'Oct 2023 - Oct 2024',
     category: 'teaching',
     points: [
-      'Led development of automated Telegram bot using Python to handle high-volume student inquiries.',
-      'Managed technical architecture and deployment for remote team collaboration.',
+      'Led development of an automated Python Telegram bot that handles high-volume student inquiries.',
+      'Managed the technical architecture and deployment for a remote team.',
     ],
   },
   {
     title: 'Programming Instructor',
-    company_name: 'Youth Center - Mugla',
+    company_name: 'Youth Center · Muğla',
     icon: creator,
-    iconBg: '#FB923C',
     date: 'Oct 2022 - Jul 2023',
     category: 'teaching',
     points: [
-      'Designed curriculum and taught Python/C++ fundamentals, focusing on algorithmic problem-solving.',
-      'Mentored students through full software development lifecycle, from debugging to deployment.',
+      'Designed the curriculum and taught Python and C++ fundamentals, focused on algorithmic problem-solving.',
+      'Mentored students through debugging and deployment of their projects.',
     ],
   },
 ];
@@ -244,7 +256,8 @@ export const publications = [
     date: 'July 2025',
     pages: '413-429',
     category: 'research',
-    keyAchievement: 'Proposed "Virtual Context Stacking" method that eliminates re-identification layer in multi-camera tracking pipeline achieving up to 81.3% cross-view identity consistency rate.',
+    keyAchievement: 'Proposes Virtual Context Stacking: regions from every camera are normalised into one composite frame, so one YOLO11 and ByteTrack pass tracks vehicles across views with no calibration and no re-identification network. 81.3% cross-view identity consistency at 30 FPS on standard hardware.',
+    link: 'https://drive.google.com/file/d/1R-k0rVyTdPN6vgjZaunwp33kpHB1W3i9/view?usp=sharing',
   },
   {
     authors: [
@@ -264,6 +277,7 @@ export const publications = [
     category: 'research',
     keyAchievement:
       'Validated Random Forest, KNN, and AdaBoost classifiers on clinical datasets, identifying high-risk cardiovascular patients with 71% accuracy.',
+    link: 'https://drive.google.com/file/d/11c0e87fTO9wfR1WSl8wK66twKOqnDaoC/view',
   },
 ];
 
@@ -294,6 +308,38 @@ export const testimonials = [
     image: 'https://randomuser.me/api/portraits/women/6.jpg',
   },
 ];
+
+// Featured work for Metal World (Al Rajhi Building and Construction).
+// Shown only when SHOW_AL_RAJHI is true. The OMS screenshot has every figure,
+// client name and date blurred; never replace it with an unblurred capture.
+const metalWorldProjects = [
+  {
+    name: 'Metal World Operations Management System',
+    summary:
+      'Internal system for tracking Metal World\'s client contracts from sale to installation. It manages 170+ contracts across 15 factories and 7 showrooms.',
+    points: [],
+    stack: ['React', 'TanStack Start', 'TanStack Query', 'Supabase', 'Tailwind CSS', 'Recharts'],
+    image: metalworldOms,
+    imageAlt: 'Operations dashboard of the Metal World OMS in Arabic, with all figures and names blurred',
+    caption: 'Dashboard, with all figures, client names and dates blurred.',
+  },
+  {
+    name: 'Metal World e-commerce platform',
+    summary:
+      'Arabic and English product catalogue for Metal World: doors, windows, railings, facades, canopies, accessories and decor, with quote requests and consultation booking.',
+    points: [
+      'AI try-on: upload a photo of your space and see the selected product placed in it, generated with a Gemini image model.',
+      '713 organic search clicks in its first four months.',
+    ],
+    stack: ['Next.js', 'TypeScript', 'Supabase', 'Gemini API', 'Tailwind CSS'],
+    image: metalworldSite,
+    imageAlt: 'Homepage of metalworld.co in English: Metal World, Elevating Your Prestige',
+    link: 'https://www.metalworld.co/en',
+    linkLabel: 'Visit metalworld.co',
+  },
+];
+
+export const featuredProjects = SHOW_AL_RAJHI ? metalWorldProjects : [];
 
 // Projects portfolio
 export const projects = [

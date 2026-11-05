@@ -6,6 +6,8 @@ import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { SectionWrapper } from '../hoc';
 import { fadeIn, textVariant } from '../utils/motion';
+import SectionHeading from './SectionHeading';
+import { SHOW_AL_RAJHI } from '../constants';
 
 // 3D Floating Tech Cube Component
 const TechCube = () => {
@@ -88,25 +90,58 @@ const TechCube = () => {
 
 const About = () => {
   return (
-    <>
-      <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
-      </motion.div>
+    <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-20 items-start">
+      <div>
+        <SectionHeading title="Overview" />
 
-      <motion.p
+        <motion.dl
+          variants={fadeIn('up', 'tween', 0.2, 0.6)}
+          className="mt-10 grid grid-cols-2 gap-8 max-w-md"
+        >
+          <div>
+            <dt className="sr-only">Cross-view identity consistency</dt>
+            <dd className="font-serif text-white text-[56px] sm:text-[72px] leading-none">81.3%</dd>
+            <dd className="mt-3 text-secondary text-[16px] leading-snug">
+              cross-view identity consistency, MSc thesis
+            </dd>
+          </div>
+          <div>
+            <dt className="sr-only">Frames per second</dt>
+            <dd className="font-serif text-white text-[56px] sm:text-[72px] leading-none">30 FPS</dd>
+            <dd className="mt-3 text-secondary text-[16px] leading-snug">
+              sustained on standard hardware
+            </dd>
+          </div>
+        </motion.dl>
+      </div>
+
+      <motion.div
         variants={fadeIn('', '', 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+        className="flex flex-col gap-5 text-white-100 text-[17px] sm:text-[18px] leading-[1.65] max-w-[60ch] lg:pt-4"
       >
-        MSc Software Engineer & Computer Vision Specialist bridging cutting-edge academic research with
-        robust industry applications. My work spans from developing novel multi-camera tracking algorithms
-        (achieving 81.3% cross-view identity consistency) to building high-performance web and mobile
-        platforms. I specialize in unified computer vision pipelines, multi-object tracking, and multimodal
-        AI systems, with deep expertise in deploying scalable solutions using YOLO, OpenCV, LangChain,
-        and modern full-stack technologies. Dedicated to translating theoretical innovations into
-        production-grade reliability.
-      </motion.p>
-    </>
+        <p>
+          I'm an AI Systems Architect based in Riyadh. I work on computer
+          vision and LLM-based systems.
+        </p>
+        {SHOW_AL_RAJHI && (
+          <p>
+            At Al Rajhi Building and Construction (CEO Office), I head the
+            Operations Management Sector. I built Metal World's operations
+            management system, which manages 170+ client contracts across 15
+            factories and 7 showrooms, and its e-commerce platform.
+          </p>
+        )}
+        <p>
+          My MSc thesis at Sakarya University proposed a single-pass method for
+          multi-camera vehicle tracking, published in July 2025. Since 2023 I
+          have also built web applications for clients through InnoMerx.
+        </p>
+        <p>
+          I'm open to conversations about AI in industry, computer vision and
+          research collaboration.
+        </p>
+      </motion.div>
+    </div>
   );
 };
 

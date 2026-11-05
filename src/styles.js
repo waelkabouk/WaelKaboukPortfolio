@@ -1,17 +1,20 @@
+// Type roles. Newsreader (serif) for headlines, numbers and the name: regular
+// for statements, medium for titles, never bold. IBM Plex Sans for everything else.
 const styles = {
   paddingX: "sm:px-16 px-6",
   paddingY: "sm:py-16 py-6",
-  padding: "sm:px-16 px-6 sm:py-16 py-10",
+  padding: "sm:px-16 px-6 sm:py-24 py-16",
 
   heroHeadText:
-    "font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[45px] text-[35px] lg:leading-[98px] mt-2",
+    "font-serif font-normal text-white lg:text-[96px] sm:text-[72px] xs:text-[56px] text-[48px] leading-[0.98] tracking-[-0.02em]",
   heroSubText:
-    "text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px]",
+    "font-sans text-white-100 lg:text-[24px] sm:text-[22px] text-[18px] leading-[1.4]",
 
   sectionHeadText:
-    "text-white font-black md:text-[60px] sm:text-[45px] xs:text-[35px] text-[28px]",
+    "font-serif font-medium text-white md:text-[64px] sm:text-[52px] text-[40px] leading-[1.02] tracking-[-0.02em]",
   sectionSubText:
-    "sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider",
+    "font-sans sm:text-[18px] text-[16px] text-secondary",
+  cardTitle: "font-serif font-medium text-white",
 };
 
 export { styles };

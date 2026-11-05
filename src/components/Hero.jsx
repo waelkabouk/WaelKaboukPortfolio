@@ -3,64 +3,85 @@ import { styles } from '../styles';
 
 const Hero = () => {
   return (
-    <section className={`relative w-full min-h-screen mx-auto flex flex-col justify-center`}>
+    <section className="relative w-full min-h-[100svh] mx-auto flex flex-col justify-center">
       <div
-        className={`relative max-w-7xl mx-auto ${styles.paddingX} flex flex-col-reverse lg:flex-row items-center justify-between gap-10 pt-[120px] pb-32 sm:pb-40 lg:pb-10`}
+        className={`relative w-full max-w-7xl mx-auto ${styles.paddingX} flex flex-col-reverse lg:flex-row items-center justify-between gap-12 pt-[120px] pb-24 lg:pb-10`}
       >
-        {/* Text Content + Line Wrapper */}
-        <div className="flex flex-row items-start gap-5 flex-1 w-full">
-          <div className="flex flex-col justify-center items-center mt-5">
-            <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
-            <div className="w-1 sm:h-80 h-40 violet-gradient" />
-          </div>
-
-          <div className="relative">
-            <h1 className={`${styles.heroHeadText} text-white`}>
-              Hi, I'm <span className="text-[#915EFF]">Wael</span>
-            </h1>
-            <h2 className={`${styles.heroSubText} mt-2 text-white-100`}>
-              MSc Software Engineer | Computer Vision Specialist
-            </h2>
-            <h3 className={`${styles.heroSubText} mt-2 text-white-50`}>
-              From State-of-the-Art to State-of-the-App.
-            </h3>
-
-          </div>
-        </div>
-
-        {/* Hero Image */}
-        <div className="flex-1 flex justify-center items-center relative z-10">
-          <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[450px] lg:h-[450px]">
-            {/* Glow effect */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#915EFF] to-purple-600 rounded-full blur-[50px] opacity-30 -z-10" />
-
-            <div className="w-full h-full rounded-full border-[3px] border-secondary/30 p-2 relative backdrop-blur-sm bg-purple-900/10 shadow-[0_0_30px_rgba(145,94,255,0.2)]">
-              <img
-                src="/wael.png"
-                alt="Wael Kabouk"
-                className="w-full h-full object-cover rounded-full shadow-2xl ring-2 ring-purple-500/20 grayscale hover:grayscale-0 transition-all duration-500 ease-in-out"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="absolute bottom-10 w-full flex justify-center items-center z-20">
-        <a href="#about">
-          <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
+        {/* Text and the trace */}
+        <div className="flex flex-row items-stretch gap-6 sm:gap-8 flex-[1.2] w-full">
+          {/* The trace: one gold line, the gold point where the pen lifts */}
+          <div className="flex flex-col items-center pt-4" aria-hidden="true">
             <motion.div
-              animate={{
-                y: [0, 24, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: 'loop',
-              }}
-              className="w-3 h-3 rounded-full bg-secondary mb-1"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.9, duration: 0.4 }}
+              className="w-4 h-4 rounded-full bg-gold"
+            />
+            <motion.div
+              initial={{ scaleY: 0 }}
+              animate={{ scaleY: 1 }}
+              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+              style={{ originY: 0 }}
+              className="w-[3px] flex-1 trace-line"
             />
           </div>
-        </a>
+
+          <div className="relative pb-2">
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              className={styles.heroHeadText}
+            >
+              Wael Kabouk
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.08, duration: 0.6, ease: 'easeOut' }}
+              className={`${styles.heroSubText} mt-6 max-w-[34ch]`}
+            >
+              AI Systems Architect in Riyadh. MSc in Software Engineering,
+              working on computer vision and LLM systems.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.24, duration: 0.6, ease: 'easeOut' }}
+              className="mt-10 flex flex-wrap gap-4"
+            >
+              <a
+                href="#contact"
+                className="inline-flex items-center min-h-[48px] px-7 bg-white text-primary font-medium text-[16px] transition-colors duration-200 hover:bg-gold active:scale-[0.98]"
+              >
+                Get in touch
+              </a>
+              <a
+                href="#works"
+                className="inline-flex items-center min-h-[48px] px-7 bg-black-200 text-white font-medium text-[16px] transition-colors duration-200 hover:bg-black-300 active:scale-[0.98]"
+              >
+                See the work
+              </a>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Portrait in the gold ring */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.1, duration: 0.8, ease: 'easeOut' }}
+          className="flex-1 flex justify-center items-center relative z-10"
+        >
+          <div className="w-60 h-60 sm:w-80 sm:h-80 lg:w-[440px] lg:h-[440px] rounded-full p-[6px] bg-gold">
+            <img
+              src="/wael.png"
+              alt="Portrait of Wael Kabouk"
+              className="w-full h-full object-cover rounded-full bg-tertiary"
+            />
+          </div>
+        </motion.div>
       </div>
     </section>
   );

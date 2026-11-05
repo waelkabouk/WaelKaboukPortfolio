@@ -13,6 +13,7 @@ import { SectionWrapper } from '../hoc';
 import { projects } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
 import PrivateProjectModal from './PrivateProjectModal';
+import FeaturedWork from './FeaturedWork';
 
 // Optimized Custom Tilt Component with better performance
 const CustomTilt = ({ children, className, onClick }) => {
@@ -222,29 +223,25 @@ const ProjectCard = ({
       className="w-full"
     >
       <CustomTilt
-        className={`bg-tertiary p-4 sm:p-5 rounded-2xl w-full h-full flex flex-col shadow-lg hover:shadow-2xl transition-shadow duration-300 will-change-transform ${project_link ? 'cursor-pointer' : ''
+        className={`bg-tertiary p-4 sm:p-5 w-full h-full flex flex-col transition-colors duration-300 hover:bg-black-200 will-change-transform ${project_link ? 'cursor-pointer' : ''
           }`}
         onClick={project_link ? handleCardClick : undefined}
       >
-        <div className="relative w-full h-[200px] sm:h-[230px] group overflow-hidden rounded-2xl">
+        <div className="relative w-full h-[200px] sm:h-[230px] group overflow-hidden bg-black-200">
           <img
             src={image}
             alt={`${name} project screenshot`}
-            className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:brightness-75 group-hover:scale-105"
+            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
             loading="lazy"
             onError={(e) => {
               e.target.style.display = 'none';
-              e.target.parentElement?.classList.add('bg-gray-800');
             }}
           />
 
-          {/* Improved overlay with better mobile support */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out" />
-
-          <div className="absolute inset-0 flex justify-end m-3 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out transform translate-y-3 group-hover:translate-y-0">
+          <div className="absolute inset-0 flex justify-end m-3 opacity-100 md:opacity-0 md:group-hover:opacity-100 focus-within:opacity-100 transition-opacity duration-300 ease-out">
             <motion.button
               onClick={handleGitHubClick}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent backdrop-blur-sm border border-white/20"
+              className="bg-primary w-11 h-11 rounded-full flex justify-center items-center cursor-pointer transition-colors duration-200 hover:bg-black-300"
               aria-label={`View source code for ${name} project`}
               type="button"
               whileHover={{
@@ -265,22 +262,11 @@ const ProjectCard = ({
               />
             </motion.button>
           </div>
-
-          {/* Enhanced mobile interaction indicator */}
-          <div className="absolute bottom-2 right-2 md:hidden">
-            <motion.div
-              className="w-6 h-6 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center"
-              animate={{ scale: [1, 1.1, 1] }}
-              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-            >
-              <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
-            </motion.div>
-          </div>
         </div>
 
-        <div className="mt-4 sm:mt-5 flex-1 flex flex-col">
+        <div className="mt-5 flex-1 flex flex-col">
           <motion.h3
-            className="text-white font-bold text-lg sm:text-[24px] leading-tight mb-2 sm:mb-3"
+            className="font-serif font-medium text-white text-[22px] lg:text-[24px] leading-tight mb-3"
             variants={{
               hidden: { opacity: 0, y: 20 },
               show: { opacity: 1, y: 0 },
@@ -291,7 +277,7 @@ const ProjectCard = ({
           </motion.h3>
 
           <motion.p
-            className="text-secondary text-sm sm:text-[14px] leading-relaxed flex-1 mb-3 sm:mb-4"
+            className="text-white-100 text-[16px] leading-relaxed flex-1 mb-4"
             variants={{
               hidden: { opacity: 0, y: 20 },
               show: { opacity: 1, y: 0 },
@@ -302,7 +288,7 @@ const ProjectCard = ({
           </motion.p>
 
           <motion.div
-            className="flex flex-wrap gap-1.5 sm:gap-2 mt-auto"
+            className="flex flex-wrap gap-x-4 gap-y-1 mt-auto"
             variants={{
               hidden: { opacity: 0 },
               show: {
@@ -318,23 +304,11 @@ const ProjectCard = ({
               tags.map((tag, tagIndex) => (
                 <motion.span
                   key={`${name}-${tag.name}-${tagIndex}`}
-                  className={`text-xs sm:text-[12px] px-2 sm:px-3 py-1 rounded-full border border-opacity-50 ${tag.color || 'text-blue-400'
-                    } border-current bg-current bg-opacity-10 hover:bg-opacity-20 transition-all duration-300 cursor-default select-none`}
+                  className="text-secondary text-[16px] cursor-default select-none"
                   variants={tagVariants}
-                  transition={{
-                    duration: 0.2,
-                    type: 'spring',
-                    stiffness: 300,
-                    damping: 20,
-                  }}
-                  whileHover={{
-                    scale: 1.05,
-                    y: -2,
-                    transition: { duration: 0.2 },
-                  }}
-                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2, ease: 'easeOut' }}
                 >
-                  #{tag.name}
+                  {tag.name}
                 </motion.span>
               ))}
           </motion.div>
@@ -366,23 +340,26 @@ const Works = () => {
   return (
     <div className="w-full" ref={sectionRef}>
       <motion.div variants={textVariant()} initial="hidden" animate={controls}>
-        <p className={styles.sectionSubText}>My work</p>
-        <h2 className={styles.sectionHeadText}>Projects.</h2>
+        <h2 className={styles.sectionHeadText}>Projects</h2>
       </motion.div>
 
       <motion.p
         variants={fadeIn('', '', 0.05, 0.4)}
         initial="hidden"
         animate={controls}
-        className="mt-3 text-secondary text-base sm:text-[17px] max-w-3xl leading-6 sm:leading-[30px]"
+        className="mt-4 text-secondary text-[17px] sm:text-[18px] max-w-[60ch] leading-relaxed"
       >
-        Following projects showcase my skills and experience through real-world
-        examples of my work. Each project reflects my ability to solve complex
-        problems, work with different technologies, and manage projects
-        effectively.
+        Open repositories link to GitHub. Private ones I can walk through on
+        request.
       </motion.p>
 
-      <div className="mt-12 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-7 auto-rows-fr">
+      <FeaturedWork />
+
+      <h3 className="mt-24 sm:mt-32 font-serif font-medium text-white text-[28px] sm:text-[34px]">
+        More projects
+      </h3>
+
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 sm:auto-rows-fr">
         {projects && projects.length > 0 ? (
           projects.map((project, index) => (
             <ProjectCard key={`project-${index}`} index={index} {...project} />

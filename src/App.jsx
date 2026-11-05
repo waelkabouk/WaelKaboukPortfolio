@@ -5,13 +5,11 @@ import {
   Contact,
   Education,
   Experience,
-  Feedbacks,
   Hero,
   Navbar,
   Publications,
   Skills,
   Languages,
-  Tech,
   Works,
   StarsCanvas,
   // CV,
@@ -20,25 +18,24 @@ import {
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="relative z-0 bg-primary">
-        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-          <Navbar />
+      <div className="relative z-0 bg-primary text-white">
+        <Navbar />
+        <main>
           <Hero />
-        </div>
-        <About />
-        <Education />
-        {/* <CV /> */}
-        <Publications />
-        <Experience />
-        <Works />
-        <Skills />
-        <Languages />
+          <About />
+          <Education />
+          {/* <CV /> */}
+          <Publications />
+          <Experience />
+          <Works />
+          <Skills />
+          <Languages />
 
-        <div className="relative z-0">
-          <Contact />
-
-          <StarsCanvas />
-        </div>
+          <div className="relative z-0">
+            <Contact />
+            <StarsCanvas />
+          </div>
+        </main>
       </div>
     </BrowserRouter>
   );
