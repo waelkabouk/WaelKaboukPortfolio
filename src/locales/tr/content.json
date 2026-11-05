@@ -1,0 +1,355 @@
+{
+  "hero": {
+    "lead": "Riyad'da yapay zekâ sistem mimarıyım. Bilgisayarlı görü ve LLM sistemleri geliştiriyorum; yüksek lisans araştırmam tek bir aracı birçok kamera boyunca takip ediyor.",
+    "portraitAlt": "Sakarya Üniversitesi mezuniyet cübbesiyle Wael Kabouk'un portresi",
+    "location": "Riyad, Suudi Arabistan"
+  },
+  "about": {
+    "title": "Hakkımda",
+    "intro": "Riyad'da yaşayan bir yapay zekâ sistem mimarıyım. Bilgisayarlı görü ve LLM tabanlı sistemler üzerinde çalışıyorum.",
+    "alRajhi": "Al Rajhi Building and Construction'da (CEO Ofisi) Operasyon Yönetimi Sektörü'nü yönetiyorum. Metal World'ün 15 fabrika ve 7 showroom genelinde 170'ten fazla müşteri sözleşmesini yöneten operasyon yönetim sistemini ve e-ticaret platformunu geliştirdim.",
+    "thesis": "Sakarya Üniversitesi'ndeki yüksek lisans tezimde çok kameralı araç takibi için tek geçişli bir yöntem önerdim; çalışma Temmuz 2025'te yayımlandı. 2023'ten beri InnoMerx aracılığıyla müşteriler için web uygulamaları da geliştiriyorum.",
+    "open": "Endüstride yapay zekâ, bilgisayarlı görü ve araştırma iş birliği üzerine konuşmalara açığım.",
+    "figures": {
+      "consistency": {
+        "label": "Kameralar arası kimlik tutarlılığı",
+        "value": "%81,3",
+        "what": "yüksek lisans tezinde kameralar arası kimlik tutarlılığı"
+      },
+      "speed": {
+        "label": "Hız",
+        "value": "30 FPS",
+        "what": "standart donanımda, tüm kameralar için tek geçiş"
+      }
+    }
+  },
+  "research": {
+    "title": "Sanal Bağlam İstifleme",
+    "tablistLabel": "Yöntem nasıl çalışır",
+    "steps": {
+      "cameras": {
+        "tab": "Üç kamera",
+        "text": "Çok kameralı takip genellikle her kamerayı ayrı ayrı işler; ardından hangi aracın hangisi olduğuna görüntüler arasında karar vermek için geometrik kalibrasyon ve bir yeniden tanımlama ağı gerekir.",
+        "caption": "Tez aracının yüklediği haliyle üç kamera görüntüsü."
+      },
+      "frame": {
+        "tab": "Tek kare",
+        "text": "Her kameradaki önemli bölgeleri normalize ederek tek bir birleşik karede topladım. Artık tek geçiş tüm görüntüleri kapsıyor: N yerine tek bir işlem hattı.",
+        "caption": "Aynı görüntüler, tek bir birleşik karede istiflenmiş halde."
+      },
+      "tracked": {
+        "tab": "Takip",
+        "text": "Bir dedektör ve ByteTrack, yeniden tanımlama ağı olmadan birleşik kare üzerinde bir kez çalışır. Tezde YOLO11 ile bu yaklaşım, 30 FPS'de %81,3 kameralar arası kimlik tutarlılığını korudu.",
+        "caption": "Aracın gösterdiği haliyle birleşik karedeki tespitler."
+      }
+    },
+    "cams": {
+      "cam1": "Birinci kamera: akşam alacasında dükkânlarla çevrili bir dönel kavşak",
+      "cam2": "İkinci kamera: aynı cadde, ikinci bir açıdan",
+      "cam3": "Üçüncü kamera: bir otopark ve yol; seçilen bölge maviyle işaretli"
+    },
+    "compositeAlt": "Araçların etrafına tespit kutuları çizilmiş birleşik kare",
+    "passes_one": "<num>{{count}}</num> geçiş, tüm kameralar için",
+    "passes_other": "<num>{{count}}</num> geçiş, her kamera için bir tane",
+    "figures": {
+      "consistency": {
+        "label": "Kameralar arası kimlik tutarlılığı",
+        "value": "%81,3",
+        "what": "kameralar arası kimlik tutarlılığı"
+      },
+      "speed": {
+        "label": "Hız",
+        "value": "30 FPS",
+        "what": "standart donanımda, yeniden tanımlama ağı olmadan"
+      }
+    }
+  },
+  "work": {
+    "title": "Seçilmiş projeler",
+    "intro": "Üretim sistemleri ve müşteri projeleri. Açık depolar GitHub'a bağlanıyor; özel olanları talep üzerine anlatabilirim.",
+    "indexLabel": "Projeler",
+    "count": "{{current}} / {{total}}",
+    "othersTitle": "Diğer projeler",
+    "terms": {
+      "sensors": "Sensörler"
+    },
+    "projects": {
+      "mwOps": {
+        "name": "Metal World operasyon sistemi",
+        "kind": "Operasyon · Gösterge paneli",
+        "summary": "Metal World'ün müşteri sözleşmelerini satıştan montaja kadar takip eden iç sistem. 15 fabrika ve 7 showroom genelinde 170'ten fazla sözleşmeyi yönetiyor.",
+        "alt": "Metal World sisteminin Arapça operasyon paneli; tüm rakamlar ve isimler bulanıklaştırılmış",
+        "caption": "Rakamlar, müşteri isimleri ve tarihler bulanıklaştırılmıştır."
+      },
+      "mwShop": {
+        "name": "Metal World e-ticaret",
+        "kind": "Web · Üretken yapay zekâ",
+        "summary": "Kapı, pencere, korkuluk ve cepheler için Arapça ve İngilizce katalog; teklif talebi, danışmanlık randevusu ve bir ürünü mekânınızın fotoğrafına yerleştiren yapay zekâ destekli deneme özelliğiyle. İlk dört ayında 713 organik arama tıklaması.",
+        "alt": "metalworld.co'nun İngilizce ana sayfası"
+      },
+      "vehicles": {
+        "name": "Araç tespiti",
+        "kind": "Bilgisayarlı görü",
+        "summary": "Otoyol görüntülerinde gerçek zamanlı araç tespiti ve sayımı; tez için trafik izlemeyi araştırırken YOLO11 ve OpenCV ile geliştirildi.",
+        "alt": "Her aracın etrafında yeşil tespit kutusu bulunan otoyol görüntüsü"
+      },
+      "wtcapital": {
+        "name": "WT-Capital web sitesi",
+        "kind": "Web · CMS",
+        "summary": "WT-Capital şirket web sitesi: ürünler, hizmetler, kampanyalar, haberler ve etkinlikler; içerik müşteri tarafından Sanity'de düzenleniyor.",
+        "alt": "Ürün yelpazesini gösteren WT-Capital web sitesi: baharatlar, kuruyemişler ve tohumlar"
+      },
+      "meezah": {
+        "name": "Meezah web sitesi",
+        "kind": "Web · Müşteri",
+        "summary": "Meezah Marketing Services için Arapça web sitesi: hizmetler, projeler ve şirket bilgileri; trafiğe göre indekslenmiş bir PostgreSQL şeması üzerinde.",
+        "alt": "Meezah web sitesinin Arapça hizmetler sayfası"
+      },
+      "ordering": {
+        "name": "Çok satıcılı sipariş uygulaması",
+        "kind": "Mobil · Backend",
+        "summary": "Birden fazla satıcıdan tek bir yerden sipariş vermeyi sağlayan, Express backend'li çapraz platform uygulama.",
+        "alt": "Restoranları listeleyen sipariş uygulamasından üç telefon ekranı"
+      },
+      "irrigation": {
+        "name": "Güneş enerjili sulama kontrolcüsü",
+        "kind": "Gömülü sistemler",
+        "summary": "Güneş enerjisiyle çalışan sulama: toprak sensörleri ve bir Arduino, GSM üzerinden açılıp kapatılıyor ve izleniyor. Depo özel; talep üzerine anlatabilirim.",
+        "alt": "Sulama kontrolcüsünün devre şeması: Arduino, GSM modülü, toprak sensörü ve pompa rölesi"
+      },
+      "movies": {
+        "name": "Film incelemeleri",
+        "kind": "Web · API",
+        "summary": "Spring Boot API ve MongoDB ile film inceleme sitesi; React istemcisi sunucudan ayrı geliştirildi.",
+        "alt": "Bir film afişini ve fragmanını gösteren film inceleme sitesi"
+      },
+      "mentalHealth": {
+        "name": "Ruh sağlığı analizi",
+        "summary": "Anket verilerinden ruh sağlığı sonuçlarının tahmini; R'da SVM, yapay sinir ağı ve lojistik regresyon modellerinin karşılaştırılması."
+      },
+      "tekram": {
+        "name": "Tekram Telegram botu",
+        "summary": "Sakarya'daki öğrencilerin sorularını yanıtlayan çok dilli Telegram botu."
+      },
+      "library": {
+        "name": "Kütüphane yönetim sistemi",
+        "summary": "MERN yığını üzerinde kitap envanteri, üyeler ve ödünç verme; Docker ile dağıtıldı."
+      },
+      "befit": {
+        "name": "BeFit kontrol paneli",
+        "summary": "Dubai'deki BeFit akademisinin futbol sahaları için iki dilli rezervasyon paneli."
+      }
+    }
+  },
+  "path": {
+    "title": "Muğla'dan Riyad'a",
+    "lead": "Suriyeliyim; Türkiye'de okudum, Suudi Arabistan'da çalışıyorum.",
+    "places": {
+      "mugla": {
+        "place": "Muğla",
+        "text": "Muğla Sıtkı Koçman Üniversitesi'nde İngilizce eğitimle Bilgisayar Mühendisliği lisansı. Yüksek onur derecesiyle mezun oldum ve 2019 girişliler arasında birinci oldum. Şehrin gençlik merkezinde Python ve C++ dersleri verdim.",
+        "alt": "Muğla'nın kırmızı kiremitli çatıları vadiye yayılmış, arkada dağlar",
+        "caption": "Tepelerden Muğla"
+      },
+      "sakarya": {
+        "place": "Sakarya",
+        "text": "Sakarya Üniversitesi'nde Yazılım Mühendisliği yüksek lisansı; onur derecesiyle mezuniyet ve çok kameralı araç takibi üzerine tez. Suriyeli Öğrenciler Birliği'nde teknik lider.",
+        "alt": "Sapanca Gölü'nün mavi suları üzerinde ahşap bir iskele ve restoran",
+        "caption": "Sapanca Gölü, Sakarya"
+      },
+      "konya": {
+        "place": "Konya",
+        "text": "6. Uluslararası Mühendislik ve Uygulamalı Doğa Bilimleri Konferansı'nda makine öğrenmesiyle kalp krizi tahmini üzerine bildiri.",
+        "alt": "Konya'daki Mevlana Müzesi'nin yeşil çinili kubbesi, mavi gökyüzü önünde",
+        "caption": "Mevlana Müzesi, Konya"
+      },
+      "ankara": {
+        "place": "Ankara",
+        "text": "3. Uluslararası Ankara Bilimsel Araştırma ve İnovasyon Kongresi'nde tez bildirisi: Virtual Context-Based Multi-Camera Vehicle Tracking.",
+        "alt": "Gece Kocatepe Camii ve Ankara silueti",
+        "caption": "Kocatepe Camii, Ankara"
+      },
+      "riyadh": {
+        "place": "Riyad",
+        "text": "Yapay zekâ sistem mimarı; bilgisayarlı görü ve LLM sistemleri üzerinde çalışıyorum.",
+        "text_alRajhi": "Al Rajhi Building and Construction'da, CEO Ofisi'nde yapay zekâ sistem mimarı; Operasyon Yönetimi Sektörü'nün başındayım.",
+        "alt": "Riyad'da akşam alacasında ışıklandırılmış Kral Abdullah Finans Bölgesi kuleleri",
+        "caption": "KAFD, Riyad"
+      }
+    }
+  },
+  "cv": {
+    "title": "Deneyim",
+    "intro": "Sektör, araştırma, eğitmenlik, eğitim ve yayınlar.",
+    "groups": {
+      "industry": "Sektör",
+      "research": "Araştırma",
+      "teaching": "Eğitmenlik ve liderlik",
+      "education": "Eğitim",
+      "publications": "Yayınlar"
+    },
+    "citation": "{{authors}}. {{venue}}, {{location}}. ss. {{pages}}.",
+    "roles": {
+      "alRajhi": {
+        "title": "Yapay Zekâ Sistem Mimarı",
+        "org": "Al Rajhi Building and Construction, CEO Ofisi · Riyad",
+        "points": [
+          "Fabrika ve showroom operasyonlarını ve performansını denetleyerek Operasyon Yönetimi Sektörü'ne liderlik ediyorum.",
+          "Metal World için 15 fabrika ve 7 showroom genelinde 170'ten fazla müşteri sözleşmesini yöneten Operasyon Yönetim Sistemi'nin mimarisini tasarlayıp geliştirdim.",
+          "Metal World için ilk dört ayında 713 organik arama tıklaması getiren, yapay zekâ destekli bir e-ticaret platformu geliştirdim.",
+          "Aday ön elemesini ve sıralamasını otomatikleştiren yapay zekâ tabanlı bir işe alım sistemi geliştirdim."
+        ]
+      },
+      "innomerx": {
+        "title": "Yapay Zekâ Yazılım Mühendisi",
+        "org": "InnoMerx",
+        "points": [
+          "Next.js, TypeScript ve PostgreSQL ile müşteriler için yapay zekâ destekli web uygulamaları tasarlayıp teslim ediyorum.",
+          "Arayüz mantığını çıkarım (inference) API'lerinden ayrı tutan altıgen (hexagonal) mimari.",
+          "PostgreSQL indeksleme ve API yeniden yapılandırmasıyla veritabanı sorgu süresini %28 azalttım."
+        ]
+      },
+      "kyber": {
+        "title": "Associate Yazılım Mühendisi",
+        "org": "Kyber Tech",
+        "points": [
+          "MERN yığını (MongoDB, Express, React, Node.js) üzerinde çoklu dil desteği ve dinamik sayfalar dahil 8 full-stack özellik teslim ettim.",
+          "Yükleme hızını %30 iyileştirdim."
+        ]
+      },
+      "teknofest": {
+        "title": "TEKNOFEST 2026, Sağlıkta Yapay Zekâ",
+        "org": "Takım lideri",
+        "points": [
+          "4 gen paneli genelinde genetik varyantları patojenik veya benign olarak sınıflandıran bir takıma liderlik ettim.",
+          "Tabakalı 5 katlı çapraz doğrulama ve eşik ayarıyla Random Forest ve Extra Trees; ClinVar, gnomAD ve dbNSFP'den derlenen harici veriler.",
+          "0,89–0,92 F1 skoruna ulaştık ve PDR aşamasına yükseldik (PPR %90, PDR %89)."
+        ]
+      },
+      "hsgf": {
+        "title": "Hibrit Anlamsal Yönetişim Çerçevesi (HSGF)",
+        "org": "Bağımsız araştırma, kavram kanıtı",
+        "points": [
+          "Takipçiler örtülme (occlusion) durumunda kimlikleri karıştırır. HSGF, yerel bir görü-dil modeli olan Florence-2'den alınan dil özniteliklerini (\"gümüş sedan\") kullanarak hatalı iz birleştirmelerini denetler ve veto eder.",
+          "İşlem hattı: takip için YOLO11 ve OC-SORT, öznitelikler için Florence-2, vektör deposu olarak LanceDB.",
+          "Çevrimdışı testlerde kimlik çakışmalarını tespit eden, çalışan bir kavram kanıtı."
+        ]
+      },
+      "thesis": {
+        "title": "Sanal Bağlam İstifleme",
+        "org": "Çok kameralı araç takibi üzerine yüksek lisans tezi, Sakarya Üniversitesi",
+        "points": [
+          "Çok kameralı takip genellikle geometrik kalibrasyon ve ağır bir yeniden tanımlama ağı gerektirir. Her kameradaki bölgeleri normalize ederek tek bir birleşik karede topladım; böylece tek geçiş tüm görüntülerde takip yapıyor: N yerine tek bir işlem hattı.",
+          "Açık bir yeniden tanımlama ağı olmadan YOLO11 ve ByteTrack.",
+          "Standart donanımda 30 FPS'de %81,3 kameralar arası kimlik tutarlılığı.",
+          "3. Uluslararası Ankara Bilimsel Araştırma ve İnovasyon Kongresi'nde yayımlandı (Temmuz 2025). Danışman: Prof. Dr. Ahmet Özmen."
+        ]
+      },
+      "ssu": {
+        "title": "Teknik Lider",
+        "org": "Suriyeli Öğrenciler Birliği · Sakarya",
+        "points": [
+          "Yoğun öğrenci sorularını yanıtlayan otomatik bir Python Telegram botunun geliştirilmesine liderlik ettim.",
+          "Uzaktan çalışan bir ekip için teknik mimariyi ve dağıtımı yönettim."
+        ]
+      },
+      "youthCenter": {
+        "title": "Programlama Eğitmeni",
+        "org": "Gençlik Merkezi · Muğla",
+        "points": [
+          "Müfredatı tasarladım; algoritmik problem çözmeye odaklanarak Python ve C++ temellerini öğrettim.",
+          "Öğrencilere projelerinde hata ayıklama ve dağıtım süreçlerinde mentorluk yaptım."
+        ]
+      }
+    },
+    "education": {
+      "msc": {
+        "title": "Yazılım Mühendisliği Yüksek Lisansı",
+        "org": "Sakarya Üniversitesi, Türkiye · İngilizce eğitim",
+        "points": [
+          "Not ortalaması 3,44 / 4,00, onur derecesiyle mezun.",
+          "Tez: Virtual Context-Based Multi-Camera Vehicle Tracking. Danışman: Prof. Dr. Ahmet Özmen."
+        ]
+      },
+      "bsc": {
+        "title": "Bilgisayar Mühendisliği Lisansı",
+        "org": "Muğla Sıtkı Koçman Üniversitesi, Türkiye · İngilizce eğitim",
+        "points": [
+          "Not ortalaması 3,62 / 4,00, yüksek onur derecesiyle mezun, 2019 girişliler arasında birinci.",
+          "Bitirme projesi: mikroservis mimarisinde, iş birlikçi öneri motoruna sahip çok satıcılı bir e-ticaret platformu."
+        ]
+      }
+    },
+    "publications": {
+      "vcmt": {
+        "title": "Virtual Context-Based Multi-Camera Vehicle Tracking",
+        "venue": "3rd International Ankara Scientific Research and Innovation Congress",
+        "location": "Ankara, Türkiye",
+        "summary": "Sanal Bağlam İstifleme yöntemini önerir: her kameradaki bölgeler normalize edilerek tek bir birleşik karede toplanır; böylece tek bir YOLO11 ve ByteTrack geçişi, kalibrasyon ve yeniden tanımlama ağı olmadan araçları görüntüler arasında takip eder. Standart donanımda 30 FPS'de %81,3 kameralar arası kimlik tutarlılığı."
+      },
+      "heart": {
+        "title": "Integrating Demographic and Clinical Features in Heart Attack Prediction using Machine Learning Models",
+        "venue": "6th International Conference on Engineering and Applied Natural Sciences",
+        "location": "Konya, Türkiye",
+        "summary": "Random Forest, KNN ve AdaBoost sınıflandırıcıları klinik veri kümelerinde doğrulandı; yüksek kardiyovasküler risk taşıyan hastalar %71 doğrulukla belirlendi."
+      }
+    }
+  },
+  "skills": {
+    "title": "Beceriler ve diller",
+    "lead": "Kamera akışından yayındaki cevaba kadar kullandığım araçlar ve çalıştığım üç dil.",
+    "languagesLabel": "Diller",
+    "scaleLabel": "{{language}}: {{level}}, A1'den C2'ye CEFR ölçeğinde",
+    "levels": {
+      "native": "Ana dil",
+      "C1": "İleri, C1",
+      "B2": "Orta üstü, B2"
+    },
+    "groups": {
+      "vision": {
+        "name": "Bilgisayarlı görü",
+        "items": ["OpenCV", "YOLO11", "ByteTrack", "OC-SORT", "Çoklu nesne takibi", "Florence-2 (görü-dil modeli)"]
+      },
+      "ml": {
+        "name": "Makine öğrenmesi",
+        "items": ["PyTorch", "TensorFlow", "scikit-learn", "Hugging Face Transformers", "MLflow"]
+      },
+      "llm": {
+        "name": "LLM ve bilgi erişimi",
+        "items": ["LangChain", "LangGraph", "Erişimle zenginleştirilmiş üretim (RAG)", "FAISS", "LanceDB"]
+      },
+      "web": {
+        "name": "Web ve backend",
+        "items": ["Next.js", "React", "FastAPI", "Node.js", "Express", "Spring Boot"]
+      },
+      "infra": {
+        "name": "Veritabanları ve altyapı",
+        "items": ["PostgreSQL", "MongoDB", "Supabase", "Docker", "Kubernetes", "AWS", "Git"]
+      },
+      "programming": {
+        "name": "Programlama dilleri",
+        "items": ["Python", "TypeScript", "JavaScript", "C++", "SQL"]
+      }
+    }
+  },
+  "contact": {
+    "soft": "Görü, LLM'ler ya da araştırma?",
+    "title": "Bana yazın.",
+    "messageLabel": "Mesajınız",
+    "placeholder": "Mesajınız",
+    "send": "E-postayla gönder",
+    "note": "E-posta uygulamanızı, {{email}} adresine yazılmış bu mesajla açar.",
+    "mailSubject": "Merhaba Wael",
+    "channels": {
+      "email": "E-posta",
+      "phone": "Telefon",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    }
+  },
+  "footer": {
+    "place": "Gece Riyad; şu an çalıştığım şehir.",
+    "contactLabel": "İletişim",
+    "copyright": "© {{year}} {{name}}"
+  }
+}

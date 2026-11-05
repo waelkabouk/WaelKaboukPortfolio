@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "title": "Wael Kabouk | AI Systems Architect",
+    "description": "Wael Kabouk, AI Systems Architect in Riyadh. Computer vision and LLM systems, multi-camera tracking research, and production systems for Metal World.",
+    "ogDescription": "Projects, publications and experience of Wael Kabouk, AI Systems Architect."
+  },
+  "person": {
+    "name": "Wael Kabouk"
+  },
+  "nav": {
+    "research": "Research",
+    "work": "Work",
+    "experience": "Experience",
+    "contact": "Contact",
+    "main": "Main",
+    "sections": "Sections",
+    "moreSections": "More sections",
+    "home": "{{name}}, home",
+    "backToTopOf": "{{name}}, back to the top"
+  },
+  "actions": {
+    "emailMe": "Email me",
+    "seeResearch": "See the research",
+    "skipToResearch": "Skip to the research",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "readPaper": "Read the paper (PDF)",
+    "codeOnGithub": "Code on GitHub",
+    "visitSite": "Visit {{site}}",
+    "open": "Open",
+    "backToTop": "Back to top"
+  },
+  "language": {
+    "label": "Language"
+  },
+  "dates": {
+    "present": "Present",
+    "today": "today",
+    "range": "{{from}}–{{to}}"
+  }
+}

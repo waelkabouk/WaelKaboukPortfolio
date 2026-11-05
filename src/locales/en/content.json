@@ -1,0 +1,355 @@
+{
+  "hero": {
+    "lead": "AI systems architect in Riyadh. I build computer vision and LLM systems, and my MSc research tracks one vehicle across many cameras.",
+    "portraitAlt": "Portrait of Wael Kabouk in his Sakarya University graduation gown",
+    "location": "Riyadh, Saudi Arabia"
+  },
+  "about": {
+    "title": "About",
+    "intro": "I'm an AI systems architect based in Riyadh. I work on computer vision and LLM-based systems.",
+    "alRajhi": "At Al Rajhi Building and Construction (CEO Office), I head the Operations Management Sector. I built Metal World's operations management system, which manages 170+ client contracts across 15 factories and 7 showrooms, and its e-commerce platform.",
+    "thesis": "My MSc thesis at Sakarya University proposed a single-pass method for multi-camera vehicle tracking, published in July 2025. Since 2023 I have also built web applications for clients through InnoMerx.",
+    "open": "I'm open to conversations about AI in industry, computer vision and research collaboration.",
+    "figures": {
+      "consistency": {
+        "label": "Cross-view identity consistency",
+        "value": "81.3%",
+        "what": "cross-view identity consistency in the MSc thesis"
+      },
+      "speed": {
+        "label": "Speed",
+        "value": "30 FPS",
+        "what": "on standard hardware, one pass for every camera"
+      }
+    }
+  },
+  "research": {
+    "title": "Virtual Context Stacking",
+    "tablistLabel": "How the method works",
+    "steps": {
+      "cameras": {
+        "tab": "Three cameras",
+        "text": "Multi-camera tracking usually runs every camera on its own, then needs geometric calibration and a re-identification network to decide which car is which across views.",
+        "caption": "Three camera views, as the thesis tool loads them."
+      },
+      "frame": {
+        "tab": "One frame",
+        "text": "I normalised the regions that matter from every camera into one composite frame. One pass now covers every view: one pipeline instead of N.",
+        "caption": "The same views, stacked into one composite frame."
+      },
+      "tracked": {
+        "tab": "Tracked",
+        "text": "A detector and ByteTrack run once on the composite, with no re-identification network. In the thesis, with YOLO11, that held 81.3% cross-view identity consistency at 30 FPS.",
+        "caption": "Detections on the composite frame, as the tool shows them."
+      }
+    },
+    "cams": {
+      "cam1": "Camera one: a roundabout with shops at dusk",
+      "cam2": "Camera two: the same street from a second angle",
+      "cam3": "Camera three: a car park and road, with the selected region marked in blue"
+    },
+    "compositeAlt": "The composite frame with detection boxes drawn around cars",
+    "passes_one": "<num>{{count}}</num> pass for every camera",
+    "passes_other": "<num>{{count}}</num> passes, one per camera",
+    "figures": {
+      "consistency": {
+        "label": "Cross-view identity consistency",
+        "value": "81.3%",
+        "what": "cross-view identity consistency"
+      },
+      "speed": {
+        "label": "Speed",
+        "value": "30 FPS",
+        "what": "on standard hardware, no re-identification network"
+      }
+    }
+  },
+  "work": {
+    "title": "Selected work",
+    "intro": "Production systems and client projects. Open repositories link to GitHub; private ones I can walk through on request.",
+    "indexLabel": "Projects",
+    "count": "{{current}} / {{total}}",
+    "othersTitle": "Other projects",
+    "terms": {
+      "sensors": "Sensors"
+    },
+    "projects": {
+      "mwOps": {
+        "name": "Metal World operations system",
+        "kind": "Operations · Dashboard",
+        "summary": "Internal system for tracking Metal World's client contracts from sale to installation. It manages 170+ contracts across 15 factories and 7 showrooms.",
+        "alt": "Operations dashboard of the Metal World system in Arabic, with all figures and names blurred",
+        "caption": "Figures, client names and dates are blurred."
+      },
+      "mwShop": {
+        "name": "Metal World e-commerce",
+        "kind": "Web · Generative AI",
+        "summary": "Arabic and English catalogue for doors, windows, railings and facades, with quote requests, consultation booking and an AI try-on that places a product in a photo of your space. 713 organic search clicks in its first four months.",
+        "alt": "Homepage of metalworld.co in English"
+      },
+      "vehicles": {
+        "name": "Vehicle detection",
+        "kind": "Computer vision",
+        "summary": "Real-time vehicle detection and counting on highway footage, built with YOLO11 and OpenCV while exploring traffic monitoring for the thesis.",
+        "alt": "Highway footage with a green detection box around every car"
+      },
+      "wtcapital": {
+        "name": "WT-Capital website",
+        "kind": "Web · CMS",
+        "summary": "Company website for WT-Capital: products, services, promotions, news and events, edited by the client in Sanity.",
+        "alt": "WT-Capital website showing its product range: spices, nuts and seeds"
+      },
+      "meezah": {
+        "name": "Meezah website",
+        "kind": "Web · Client",
+        "summary": "Arabic website for Meezah Marketing Services: services, projects and company information, on a PostgreSQL schema indexed for traffic.",
+        "alt": "Services page of the Meezah website in Arabic"
+      },
+      "ordering": {
+        "name": "Multi-vendor ordering app",
+        "kind": "Mobile · Backend",
+        "summary": "Cross-platform app for ordering from several vendors in one place, with an Express backend.",
+        "alt": "Three phone screens of the ordering app listing restaurants"
+      },
+      "irrigation": {
+        "name": "Solar irrigation controller",
+        "kind": "Embedded",
+        "summary": "Irrigation that runs on solar power: soil sensors and an Arduino, switched and monitored over GSM. The repository is private; I can walk through it on request.",
+        "alt": "Circuit diagram of the irrigation controller: Arduino, GSM module, soil sensor and pump relay"
+      },
+      "movies": {
+        "name": "Movie reviews",
+        "kind": "Web · API",
+        "summary": "Movie review site with a Spring Boot API and MongoDB, and a React client developed separately from the server.",
+        "alt": "Movie review site showing a film poster and its trailer"
+      },
+      "mentalHealth": {
+        "name": "Mental health analysis",
+        "summary": "Predicting mental health consequences from survey data, comparing SVM, neural network and logistic regression models in R."
+      },
+      "tekram": {
+        "name": "Tekram Telegram bot",
+        "summary": "Multilingual Telegram bot that answers questions for students in Sakarya."
+      },
+      "library": {
+        "name": "Library management system",
+        "summary": "Book inventory, members and lending on the MERN stack, deployed with Docker."
+      },
+      "befit": {
+        "name": "BeFit control panel",
+        "summary": "Bilingual reservation panel for football pitches at the BeFit academy in Dubai."
+      }
+    }
+  },
+  "path": {
+    "title": "From Muğla to Riyadh",
+    "lead": "Syrian, educated in Turkey, working in Saudi Arabia.",
+    "places": {
+      "mugla": {
+        "place": "Muğla",
+        "text": "BSc in Computer Engineering at Muğla Sıtkı Koçman University, taught in English. High honour graduate, ranked first in the 2019 cohort. Taught Python and C++ at the city youth center.",
+        "alt": "Red-tiled roofs of Muğla spread across the valley, with mountains behind",
+        "caption": "Muğla from the hills"
+      },
+      "sakarya": {
+        "place": "Sakarya",
+        "text": "MSc in Software Engineering at Sakarya University, honour graduate, with a thesis on multi-camera vehicle tracking. Technical lead for the Syrian Students Union.",
+        "alt": "A wooden pier and restaurant over the blue water of Lake Sapanca",
+        "caption": "Lake Sapanca, Sakarya"
+      },
+      "konya": {
+        "place": "Konya",
+        "text": "Paper on heart attack prediction with machine learning at the 6th International Conference on Engineering and Applied Natural Sciences.",
+        "alt": "The green-tiled dome of the Mevlana Museum in Konya against a blue sky",
+        "caption": "Mevlana Museum, Konya"
+      },
+      "ankara": {
+        "place": "Ankara",
+        "text": "Thesis paper, Virtual Context-Based Multi-Camera Vehicle Tracking, at the 3rd International Ankara Scientific Research and Innovation Congress.",
+        "alt": "Kocatepe Mosque and the Ankara skyline at night",
+        "caption": "Kocatepe Mosque, Ankara"
+      },
+      "riyadh": {
+        "place": "Riyadh",
+        "text": "AI Systems Architect, working on computer vision and LLM systems.",
+        "text_alRajhi": "AI Systems Architect at Al Rajhi Building and Construction, CEO Office, heading the Operations Management Sector.",
+        "alt": "The King Abdullah Financial District towers lit up at dusk in Riyadh",
+        "caption": "KAFD, Riyadh"
+      }
+    }
+  },
+  "cv": {
+    "title": "Experience",
+    "intro": "Industry, research, teaching, education and publications.",
+    "groups": {
+      "industry": "Industry",
+      "research": "Research",
+      "teaching": "Teaching and leadership",
+      "education": "Education",
+      "publications": "Publications"
+    },
+    "citation": "{{authors}}. {{venue}}, {{location}}. pp. {{pages}}.",
+    "roles": {
+      "alRajhi": {
+        "title": "AI Systems Architect",
+        "org": "Al Rajhi Building and Construction, CEO Office · Riyadh",
+        "points": [
+          "Head the Operations Management Sector, overseeing factory and showroom operations and performance.",
+          "Architected and developed the Operations Management System for Metal World, managing 170+ client contracts across 15 factories and 7 showrooms.",
+          "Built an AI-augmented e-commerce platform for Metal World that generated 713 organic search clicks in its first four months.",
+          "Developed an AI recruitment system that automates candidate screening and ranking."
+        ]
+      },
+      "innomerx": {
+        "title": "AI Software Engineer",
+        "org": "InnoMerx",
+        "points": [
+          "Design and deliver AI-driven web applications for clients with Next.js, TypeScript and PostgreSQL.",
+          "Hexagonal architecture that keeps UI logic separate from inference APIs.",
+          "Cut database query time by 28% through PostgreSQL indexing and API restructuring."
+        ]
+      },
+      "kyber": {
+        "title": "Associate Software Engineer",
+        "org": "Kyber Tech",
+        "points": [
+          "Delivered 8 full-stack features on the MERN stack (MongoDB, Express, React, Node.js), including multi-language support and dynamic pages.",
+          "Improved loading speed by 30%."
+        ]
+      },
+      "teknofest": {
+        "title": "TEKNOFEST 2026, AI in Health",
+        "org": "Team leader",
+        "points": [
+          "Led a team classifying genetic variants as pathogenic or benign across 4 gene panels.",
+          "Random Forest and Extra Trees with stratified 5-fold cross-validation and threshold tuning; external data assembled from ClinVar, gnomAD and dbNSFP.",
+          "Reached 0.89 to 0.92 F1 and advanced to the PDR stage (PPR 90%, PDR 89%)."
+        ]
+      },
+      "hsgf": {
+        "title": "Hybrid Semantic-Governance Framework (HSGF)",
+        "org": "Independent research, proof-of-concept",
+        "points": [
+          "Trackers swap identities under occlusion. HSGF uses language attributes (\"silver sedan\") from a local vision-language model, Florence-2, to audit and veto wrong track merges.",
+          "Pipeline: YOLO11 and OC-SORT for tracking, Florence-2 for attributes, LanceDB as the vector store.",
+          "Working proof-of-concept that detects identity conflicts in offline tests."
+        ]
+      },
+      "thesis": {
+        "title": "Virtual Context Stacking",
+        "org": "MSc thesis on multi-camera vehicle tracking, Sakarya University",
+        "points": [
+          "Multi-camera tracking usually needs geometric calibration and a heavy re-identification network. I normalised regions from every camera into one composite frame, so a single pass tracks across all views: one pipeline instead of N.",
+          "YOLO11 and ByteTrack, with no explicit re-identification network.",
+          "81.3% cross-view identity consistency at 30 FPS on standard hardware.",
+          "Published at the 3rd International Ankara Scientific Research and Innovation Congress (July 2025). Advisor: Prof. Dr. Ahmet Özmen."
+        ]
+      },
+      "ssu": {
+        "title": "Technical Lead",
+        "org": "Syrian Students Union · Sakarya",
+        "points": [
+          "Led development of an automated Python Telegram bot that handles high-volume student inquiries.",
+          "Managed the technical architecture and deployment for a remote team."
+        ]
+      },
+      "youthCenter": {
+        "title": "Programming Instructor",
+        "org": "Youth Center · Muğla",
+        "points": [
+          "Designed the curriculum and taught Python and C++ fundamentals, focused on algorithmic problem-solving.",
+          "Mentored students through debugging and deployment of their projects."
+        ]
+      }
+    },
+    "education": {
+      "msc": {
+        "title": "MSc in Software Engineering",
+        "org": "Sakarya University, Turkey · taught in English",
+        "points": [
+          "GPA 3.44 / 4.00, honour graduate.",
+          "Thesis: Virtual Context-Based Multi-Camera Vehicle Tracking. Advisor: Prof. Dr. Ahmet Özmen."
+        ]
+      },
+      "bsc": {
+        "title": "BSc in Computer Engineering",
+        "org": "Muğla Sıtkı Koçman University, Turkey · taught in English",
+        "points": [
+          "GPA 3.62 / 4.00, high honour graduate, ranked first in the 2019 cohort.",
+          "Capstone: a multi-vendor e-commerce platform on microservices, with a collaborative recommendation engine."
+        ]
+      }
+    },
+    "publications": {
+      "vcmt": {
+        "title": "Virtual Context-Based Multi-Camera Vehicle Tracking",
+        "venue": "3rd International Ankara Scientific Research and Innovation Congress",
+        "location": "Ankara, Turkey",
+        "summary": "Proposes Virtual Context Stacking: regions from every camera are normalised into one composite frame, so one YOLO11 and ByteTrack pass tracks vehicles across views with no calibration and no re-identification network. 81.3% cross-view identity consistency at 30 FPS on standard hardware."
+      },
+      "heart": {
+        "title": "Integrating Demographic and Clinical Features in Heart Attack Prediction using Machine Learning Models",
+        "venue": "6th International Conference on Engineering and Applied Natural Sciences",
+        "location": "Konya, Turkey",
+        "summary": "Validated Random Forest, KNN, and AdaBoost classifiers on clinical datasets, identifying high-risk cardiovascular patients with 71% accuracy."
+      }
+    }
+  },
+  "skills": {
+    "title": "Skills and languages",
+    "lead": "The tools I use from the camera feed to the deployed answer, and the three languages I work in.",
+    "languagesLabel": "Languages",
+    "scaleLabel": "{{language}}: {{level}}, on the CEFR scale from A1 to C2",
+    "levels": {
+      "native": "Native",
+      "C1": "Advanced, C1",
+      "B2": "Upper intermediate, B2"
+    },
+    "groups": {
+      "vision": {
+        "name": "Computer vision",
+        "items": ["OpenCV", "YOLO11", "ByteTrack", "OC-SORT", "Multi-object tracking", "Florence-2 (vision-language model)"]
+      },
+      "ml": {
+        "name": "Machine learning",
+        "items": ["PyTorch", "TensorFlow", "scikit-learn", "Hugging Face Transformers", "MLflow"]
+      },
+      "llm": {
+        "name": "LLM and retrieval",
+        "items": ["LangChain", "LangGraph", "Retrieval-augmented generation (RAG)", "FAISS", "LanceDB"]
+      },
+      "web": {
+        "name": "Web and backend",
+        "items": ["Next.js", "React", "FastAPI", "Node.js", "Express", "Spring Boot"]
+      },
+      "infra": {
+        "name": "Databases and infrastructure",
+        "items": ["PostgreSQL", "MongoDB", "Supabase", "Docker", "Kubernetes", "AWS", "Git"]
+      },
+      "programming": {
+        "name": "Programming languages",
+        "items": ["Python", "TypeScript", "JavaScript", "C++", "SQL"]
+      }
+    }
+  },
+  "contact": {
+    "soft": "Vision, LLMs or research?",
+    "title": "Write to me.",
+    "messageLabel": "Your message",
+    "placeholder": "Your message",
+    "send": "Send by email",
+    "note": "Opens your email app with this message, addressed to {{email}}.",
+    "mailSubject": "Hello Wael",
+    "channels": {
+      "email": "Email",
+      "phone": "Phone",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    }
+  },
+  "footer": {
+    "place": "Riyadh at night, where I work now.",
+    "contactLabel": "Contact",
+    "copyright": "© {{year}} {{name}}"
+  }
+}

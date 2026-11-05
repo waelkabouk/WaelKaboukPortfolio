@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "title": "Wael Kabouk | Yapay Zekâ Sistem Mimarı",
+    "description": "Wael Kabouk, Riyad'da yapay zekâ sistem mimarı. Bilgisayarlı görü ve LLM sistemleri, çok kameralı takip araştırması ve Metal World için üretim sistemleri.",
+    "ogDescription": "Yapay zekâ sistem mimarı Wael Kabouk'un projeleri, yayınları ve deneyimi."
+  },
+  "person": {
+    "name": "Wael Kabouk"
+  },
+  "nav": {
+    "research": "Araştırma",
+    "work": "Projeler",
+    "experience": "Deneyim",
+    "contact": "İletişim",
+    "main": "Ana menü",
+    "sections": "Bölümler",
+    "moreSections": "Diğer bölümler",
+    "home": "{{name}}, ana sayfa",
+    "backToTopOf": "{{name}}, başa dön"
+  },
+  "actions": {
+    "emailMe": "E-posta gönder",
+    "seeResearch": "Araştırmayı incele",
+    "skipToResearch": "Araştırmaya geç",
+    "openMenu": "Menüyü aç",
+    "closeMenu": "Menüyü kapat",
+    "readPaper": "Makaleyi oku (PDF)",
+    "codeOnGithub": "GitHub'da kod",
+    "visitSite": "{{site}} sitesine git",
+    "open": "Aç",
+    "backToTop": "Başa dön"
+  },
+  "language": {
+    "label": "Dil"
+  },
+  "dates": {
+    "present": "Günümüz",
+    "today": "bugün",
+    "range": "{{from}}–{{to}}"
+  }
+}

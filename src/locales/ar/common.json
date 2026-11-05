@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "title": "Wael Kabouk | معماري أنظمة الذكاء الاصطناعي",
+    "description": "Wael Kabouk، معماري أنظمة ذكاء اصطناعي في الرياض. أنظمة الرؤية الحاسوبية والنماذج اللغوية الكبيرة، وأبحاث التتبع متعدد الكاميرات، وأنظمة إنتاجية لـ Metal World.",
+    "ogDescription": "مشاريع Wael Kabouk ومنشوراته وخبراته، معماري أنظمة الذكاء الاصطناعي."
+  },
+  "person": {
+    "name": "Wael Kabouk"
+  },
+  "nav": {
+    "research": "البحث",
+    "work": "الأعمال",
+    "experience": "الخبرات",
+    "contact": "التواصل",
+    "main": "القائمة الرئيسية",
+    "sections": "الأقسام",
+    "moreSections": "أقسام أخرى",
+    "home": "{{name}}، الصفحة الرئيسية",
+    "backToTopOf": "{{name}}، العودة إلى الأعلى"
+  },
+  "actions": {
+    "emailMe": "راسلني",
+    "seeResearch": "اطّلع على البحث",
+    "skipToResearch": "انتقل إلى البحث",
+    "openMenu": "فتح القائمة",
+    "closeMenu": "إغلاق القائمة",
+    "readPaper": "اقرأ الورقة (PDF)",
+    "codeOnGithub": "الشيفرة على GitHub",
+    "visitSite": "زيارة {{site}}",
+    "open": "فتح",
+    "backToTop": "العودة إلى الأعلى"
+  },
+  "language": {
+    "label": "اللغة"
+  },
+  "dates": {
+    "present": "حتى الآن",
+    "today": "حتى الآن",
+    "range": "{{from}} – {{to}}"
+  }
+}
