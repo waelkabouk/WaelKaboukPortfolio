@@ -68,7 +68,7 @@ const Work = () => {
         </p>
       </div>
 
-      {/* Pinned stage: picture beside the text on desktop, above it on phones */}
+      {/* Pinned stage at every size: picture beside the text, or above it on portrait phones */}
       <div className="work-track" ref={trackRef} style={{ '--n': n }}>
         <div className="work-stage">
           <div className="work-left">
@@ -107,26 +107,6 @@ const Work = () => {
             ))}
           </div>
         </div>
-      </div>
-
-      {/* Short screens only: each project stacks as picture and text */}
-      <div className="work-mobile">
-        {workItems.map((w) => (
-          <article key={w.id} data-rv>
-            <div className="pic">
-              <img src={w.image} alt={text(w.id, 'alt')} loading="lazy" />
-            </div>
-            <h3 className="h3">{text(w.id, 'name')}</h3>
-            <p className="kd small muted">{text(w.id, 'kind')}</p>
-            <p className="sum">{text(w.id, 'summary')}</p>
-            <p className="small muted" style={{ marginTop: 10 }}>{stackLine(w.stack, t)}</p>
-            {w.link && (
-              <a className="link" style={{ display: 'inline-block', marginTop: 14 }} href={w.link} target="_blank" rel="noopener noreferrer">
-                {linkLabel(w, t)}
-              </a>
-            )}
-          </article>
-        ))}
       </div>
 
       <div className="others">

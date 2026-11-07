@@ -308,32 +308,21 @@ main [id] { scroll-margin-top: 64px; }
   object-fit: contain; object-position: 50% 50%;
 }
 .work-pic figcaption { position: absolute; inset-inline-start: 8%; bottom: 28px; font-size: var(--t-small); color: var(--muted); }
-.work-mobile { display: none; }
 
 .others { padding: var(--gap-section) var(--edge) 0; display: grid; grid-template-columns: 38fr 62fr; gap: 40px; }
 .others ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 40px 48px; }
 .others li p { margin-top: 8px; }
 .others li a { display: inline-block; margin-top: 10px; font-size: var(--t-small); }
 
-@media (max-width: 1023px), (max-height: 640px) {
-  .work-track { display: none; }
-  .work-head { grid-template-columns: 1fr; gap: 20px; padding-bottom: 0; }
-  .work-mobile { display: block; padding: 0 var(--edge); }
-  .work-mobile article { margin-top: 64px; }
-  .work-mobile .pic { background: var(--navy-3); aspect-ratio: 16 / 9; overflow: hidden; }
-  .work-mobile .pic img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
-  .work-mobile .h3 { margin-top: 20px; }
-  .work-mobile .kd { margin-top: 4px; }
-  .work-mobile p.sum { margin-top: 12px; }
+/* The pinned stage is used at every size; only its arrangement changes. */
+@media (max-width: 1023px) {
+  .work-head { grid-template-columns: 1fr; gap: 20px; padding-bottom: 32px; }
   .others { grid-template-columns: 1fr; }
   .others ul { grid-template-columns: 1fr; }
 }
 .work-count { display: none; }
-/* Phones and tablets (tall enough): the same pinned stage, picture above the text */
+/* Phones and tablets in portrait: picture above the text */
 @media (max-width: 1023px) and (min-height: 641px) {
-  .work-track { display: block; }
-  .work-mobile { display: none; }
-  .work-head { padding-bottom: 32px; }
   .work-stage { grid-template-columns: 1fr; grid-template-rows: clamp(150px, 30svh, 420px) minmax(0, 1fr); gap: 20px; padding: 76px var(--edge) 20px; }
   .work-pics { order: -1; }
   .work-left { padding: 0; gap: 12px; justify-content: flex-start; overflow: hidden; }
@@ -342,6 +331,14 @@ main [id] { scroll-margin-top: 64px; }
   .work-active p:not(.stack) { font-size: var(--t-small); line-height: 1.5; }
   .work-index { display: none; }
   .work-pic figcaption { inset-inline-start: 12px; bottom: 12px; }
+}
+/* Short screens (landscape phones, cramped windows): keep picture beside text, tighter */
+@media (max-height: 640px) {
+  .work-stage { padding-inline-end: var(--edge); gap: 24px; }
+  .work-left { padding: 64px 0 16px; gap: 12px; overflow: hidden; }
+  .work-count { display: block; }
+  .work-active p:not(.stack) { font-size: var(--t-small); line-height: 1.5; }
+  .work-index { display: none; }
 }
 
 /* ---------------------------------------------------------------- path: sticky photograph, active list */
